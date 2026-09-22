@@ -1,0 +1,153 @@
+records  form=everything  source=winner
+batch: 6 records  epoch=e2-4f495a82189ded97
+
+type=Perk  formid=0BE127:Skyrim.esm  runtime=000BE127  editorid=VKR_Alc_000_AlchemyMastery_Perk_WasAlchemist1  winner=Vokrii - Minimalistic Perks of Skyrim.esp  override_depth=2
+fields (from Vokrii - Minimalistic Perks of Skyrim.esp):
+  Conditions = [list: 0 item(s)] — pass project.depth=2 to expand
+  Description = Potions and poisons you make are 1% stronger per level of Alchemy.
+  EditorID = VKR_Alc_000_AlchemyMastery_Perk_WasAlchemist1
+  Effects = [list: 1 item(s)] — pass project.depth=2 to expand
+  FormKey = 0BE127:Skyrim.esm
+  FormVersion = 44
+  Hidden = False
+  Icons = (absent)
+  IsCompressed = False
+  IsDeleted = False
+  Level = 0
+  MajorFlags = 0
+  MajorRecordFlagsRaw = 0
+  Name = Alchemy Mastery
+  NextPerk = (null link)
+  NumRanks = 1
+  Playable = True
+  SkyrimMajorRecordFlags = 0
+  Trait = False
+  Version2 = 8
+  VersionControl = 0
+  VirtualMachineAdapter = (absent)
+
+type=Perk  formid=058216:Skyrim.esm  runtime=00058216  editorid=VKR_Alc_030_Benefactor_Perk_WasBenefactor  winner=Vokrii - Minimalistic Perks of Skyrim.esp  override_depth=2
+fields (from Vokrii - Minimalistic Perks of Skyrim.esp):
+  Conditions = [list: 2 item(s)] — pass project.depth=2 to expand
+  Description = Beneficial potions you make are 25% stronger.
+  EditorID = VKR_Alc_030_Benefactor_Perk_WasBenefactor
+  Effects = [list: 1 item(s)] — pass project.depth=2 to expand
+  FormKey = 058216:Skyrim.esm
+  FormVersion = 44
+  Hidden = False
+  Icons = (absent)
+  IsCompressed = False
+  IsDeleted = False
+  Level = 0
+  MajorFlags = 0
+  MajorRecordFlagsRaw = 0
+  Name = Benefactor
+  NextPerk = (null link)
+  NumRanks = 1
+  Playable = True
+  SkyrimMajorRecordFlags = 0
+  Trait = False
+  Version2 = 0
+  VersionControl = 0
+  VirtualMachineAdapter = (absent)
+
+type=Perk  formid=058217:Skyrim.esm  runtime=00058217  editorid=VKR_Alc_030_Poisoner_Perk_WasPoisoner  winner=Vokrii - Minimalistic Perks of Skyrim.esp  override_depth=2
+fields (from Vokrii - Minimalistic Perks of Skyrim.esp):
+  Conditions = [list: 2 item(s)] — pass project.depth=2 to expand
+  Description = Poisons you make are 25% stronger.
+  EditorID = VKR_Alc_030_Poisoner_Perk_WasPoisoner
+  Effects = [list: 1 item(s)] — pass project.depth=2 to expand
+  FormKey = 058217:Skyrim.esm
+  FormVersion = 44
+  Hidden = False
+  Icons = (absent)
+  IsCompressed = False
+  IsDeleted = False
+  Level = 0
+  MajorFlags = 0
+  MajorRecordFlagsRaw = 0
+  Name = Poisoner
+  NextPerk = (null link)
+  NumRanks = 1
+  Playable = True
+  SkyrimMajorRecordFlags = 0
+  Trait = False
+  Version2 = 13
+  VersionControl = 0
+  VirtualMachineAdapter = (absent)
+
+type=Perk  formid=058218:Skyrim.esm  runtime=00058218  editorid=VKR_Alc_050_Experimenter_Perk_WasExperimenter1  winner=Vokrii - Minimalistic Perks of Skyrim.esp  override_depth=2
+fields (from Vokrii - Minimalistic Perks of Skyrim.esp):
+  Conditions = [list: 2 item(s)] — pass project.depth=2 to expand
+  Description = Eating an ingredient reveals hidden effects.
+  EditorID = VKR_Alc_050_Experimenter_Perk_WasExperimenter1
+  Effects = [list: 1 item(s)] — pass project.depth=2 to expand
+  FormKey = 058218:Skyrim.esm
+  FormVersion = 44
+  Hidden = False
+  Icons = (absent)
+  IsCompressed = False
+  IsDeleted = False
+  Level = 0
+  MajorFlags = 0
+  MajorRecordFlagsRaw = 0
+  Name = Experimenter
+  NextPerk = (null link)
+  NumRanks = 1
+  Playable = True
+  SkyrimMajorRecordFlags = 0
+  Trait = False
+  Version2 = 14
+  VersionControl = 0
+  VirtualMachineAdapter = (absent)
+
+type=Perk  formid=105F2E:Skyrim.esm  runtime=00105F2E  editorid=VKR_Alc_060_GreenThumb_Perk_WasGreenThumb  winner=Vokrii - Minimalistic Perks of Skyrim.esp  override_depth=3
+fields (from Vokrii - Minimalistic Perks of Skyrim.esp):
+  Conditions = [list: 2 item(s)] — pass project.depth=2 to expand
+  Description = Twice as many ingredients are gathered from plants.
+  EditorID = VKR_Alc_060_GreenThumb_Perk_WasGreenThumb
+  Effects = [list: 1 item(s)] — pass project.depth=2 to expand
+  FormKey = 105F2E:Skyrim.esm
+  FormVersion = 44
+  Hidden = False
+  Icons = (absent)
+  IsCompressed = False
+  IsDeleted = False
+  Level = 0
+  MajorFlags = 0
+  MajorRecordFlagsRaw = 0
+  Name = Green Thumb
+  NextPerk = (null link)
+  NumRanks = 1
+  Playable = True
+  SkyrimMajorRecordFlags = 0
+  Trait = False
+  Version2 = 6
+  VersionControl = 0
+  VirtualMachineAdapter = (absent)
+
+type=Perk  formid=27A1E1:Vokrii - Minimalistic Perks of Skyrim.esp  runtime=6527A1E1  editorid=VKR_Alc_100_DoubleToilAndTrouble_Perk  winner=Vokrii - Minimalistic Perks of Skyrim.esp  override_depth=1
+fields (from Vokrii - Minimalistic Perks of Skyrim.esp):
+  Conditions = [list: 2 item(s)] — pass project.depth=2 to expand
+  Description = Twice as many potions are created.
+  EditorID = VKR_Alc_100_DoubleToilAndTrouble_Perk
+  Effects = [list: 1 item(s)] — pass project.depth=2 to expand
+  FormKey = 27A1E1:Vokrii - Minimalistic Perks of Skyrim.esp
+  FormVersion = 44
+  Hidden = False
+  Icons = (absent)
+  IsCompressed = False
+  IsDeleted = False
+  Level = 0
+  MajorFlags = 0
+  MajorRecordFlagsRaw = 0
+  Name = Double Toil and Trouble
+  NextPerk = (null link)
+  NumRanks = 1
+  Playable = True
+  SkyrimMajorRecordFlags = 0
+  Trait = False
+  Version2 = 0
+  VersionControl = 0
+  VirtualMachineAdapter = (absent)
+read 6 record bodies in 291 ms

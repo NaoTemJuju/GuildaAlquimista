@@ -1,0 +1,77 @@
+{
+  "schemaVersion": 1,
+  "debug": false,
+  "maxOperations": 100,
+  "purification": {
+    "adept": 0.9,
+    "specialist": 0.95,
+    "master": 1
+  },
+  "concentration": {
+    "specialist": 1.1,
+    "master": 1.15
+  },
+  "forms": {
+    "guildPlugin": "GuildAlchemy.esp",
+    "workbench": "000800:GuildAlchemy.esp",
+    "ranks": [
+      "000802:GuildAlchemy.esp",
+      "000803:GuildAlchemy.esp",
+      "000804:GuildAlchemy.esp",
+      "000805:GuildAlchemy.esp",
+      "000806:GuildAlchemy.esp"
+    ],
+    "vokriiPlugin": "Vokrii - Minimalistic Perks of Skyrim.esp",
+    "apothecaryPlugin": "Apothecary.esp",
+    "vokriiKeywords": {
+      "restore": [
+        "042503:Skyrim.esm",
+        "042508:Skyrim.esm",
+        "042504:Skyrim.esm"
+      ],
+      "beneficial": "0F8A4E:Skyrim.esm",
+      "harmful": "042509:Skyrim.esm"
+    },
+    "rankGrants": [
+      {
+        "minAlchemy": 20,
+        "perks": [
+          "0BE127:Skyrim.esm"
+        ]
+      },
+      {
+        "minAlchemy": 40,
+        "perks": [
+          "058215:Skyrim.esm"
+        ]
+      },
+      {
+        "minAlchemy": 60,
+        "perks": [
+          "058216:Skyrim.esm",
+          "058217:Skyrim.esm"
+        ]
+      },
+      {
+        "minAlchemy": 80,
+        "perks": [
+          "058218:Skyrim.esm",
+          "105F2E:Skyrim.esm"
+        ]
+      },
+      {
+        "minAlchemy": 100,
+        "perks": [
+          "27A1E1:Vokrii - Minimalistic Perks of Skyrim.esp"
+        ]
+      }
+    ]
+  },
+  "unsupportedScaling": "reject_process",
+  "matrix": {
+    "enabled": false
+  },
+  "flux": {
+    "enabled": false
+  }
+}

@@ -1,0 +1,394 @@
+records  form=summary  source=winner
+scan: 426 matches  epoch=e2-4f495a82189ded97
+  058216:Skyrim.esm  runtime=00058216  type=Perk  editorid=VKR_Alc_030_Benefactor_Perk_WasBenefactor  winner=Vokrii - Minimalistic Perks of Skyrim.esp  override_depth=2
+  058217:Skyrim.esm  runtime=00058217  type=Perk  editorid=VKR_Alc_030_Poisoner_Perk_WasPoisoner  winner=Vokrii - Minimalistic Perks of Skyrim.esp  override_depth=2
+  058218:Skyrim.esm  runtime=00058218  type=Perk  editorid=VKR_Alc_050_Experimenter_Perk_WasExperimenter1  winner=Vokrii - Minimalistic Perks of Skyrim.esp  override_depth=2
+  05821D:Skyrim.esm  runtime=0005821D  type=Perk  editorid=VKR_Alc_070_Purity_Perk_WasPurity  winner=Vokrii - Minimalistic Perks of Skyrim.esp  override_depth=3
+  058F61:Skyrim.esm  runtime=00058F61  type=Perk  editorid=VKR_Arc_030_EagleEye_Perk_WasEagleEye  winner=Vokrii - Minimalistic Perks of Skyrim.esp  override_depth=2
+  058F62:Skyrim.esm  runtime=00058F62  type=Perk  editorid=VKR_Arc_050_PowerShot_Perk_WasPowerShot  winner=Vokrii - Minimalistic Perks of Skyrim.esp  override_depth=2
+  058F63:Skyrim.esm  runtime=00058F63  type=Perk  editorid=VKR_Arc_060_Ranger_Perk_WasRanger  winner=Vokrii - Minimalistic Perks of Skyrim.esp  override_depth=2
+  058F64:Skyrim.esm  runtime=00058F64  type=Perk  editorid=VKR_Arc_040_ImpalingShot_Perk_WasBullseye  winner=Vokrii - Apply Spell Conditions Fix.esp  override_depth=5
+  058F66:Skyrim.esm  runtime=00058F66  type=Perk  editorid=VKR_Bck_090_DragonTail_Perk  winner=Vokrii - Minimalistic Perks of Skyrim.esp  override_depth=2
+  058F67:Skyrim.esm  runtime=00058F67  type=Perk  editorid=VKR_Bck_020_PowerBash_Perk_WasPowerBash  winner=Vokrii - Minimalistic Perks of Skyrim.esp  override_depth=2
+  058F68:Skyrim.esm  runtime=00058F68  type=Perk  editorid=VKR_Bck_030_DeflectArrows_Perk_WasDeflectArrows  winner=Vokrii - Minimalistic Perks of Skyrim.esp  override_depth=3
+  058F69:Skyrim.esm  runtime=00058F69  type=Perk  editorid=VKR_Bck_050_ElementalProtection_Perk_WasElementalProtection  winner=Vokrii - Minimalistic Perks of Skyrim.esp  override_depth=2
+  058F6A:Skyrim.esm  runtime=00058F6A  type=Perk  editorid=VKR_Bck_090_ShieldCharge_Perk_WasShieldCharge  winner=Vokrii - Minimalistic Perks of Skyrim.esp  override_depth=2
+  058F6C:Skyrim.esm  runtime=00058F6C  type=Perk  editorid=VKR_Hea_060_TowerOfStrength_Perk_WasTowerOfStrength  winner=Vokrii - Minimalistic Perks of Skyrim.esp  override_depth=2
+  058F6D:Skyrim.esm  runtime=00058F6D  type=Perk  editorid=VKR_Hea_050_HeavyArmorTraining_Perk_WasConditioning  winner=Vokrii - Minimalistic Perks of Skyrim.esp  override_depth=2
+  058F6E:Skyrim.esm  runtime=00058F6E  type=Perk  editorid=VKR_Lia_020_IronFist1_Perk_WasFistsOfSteel  winner=Vokrii - Apply Spell Conditions Fix.esp  override_depth=4
+  058F6F:Skyrim.esm  runtime=00058F6F  type=Perk  editorid=VKR_Hea_030_HeavyArmorFit_Perk_30_WasWellFitted  winner=Vokrii - Minimalistic Perks of Skyrim.esp  override_depth=2
+  058F72:Skyrim.esm  runtime=00058F72  type=Perk  editorid=VKR_Spe_030_Bribery_Perk_WasBribery  winner=Vokrii - Minimalistic Perks of Skyrim.esp  override_depth=2
+  058F75:Skyrim.esm  runtime=00058F75  type=Perk  editorid=VKR_Spe_030_Kinship_Perk_WasAllure  winner=Vokrii - Minimalistic Perks of Skyrim.esp  override_depth=2
+  058F79:Skyrim.esm  runtime=00058F79  type=Perk  editorid=VKR_Spe_080_Fence_Perk_WasFence  winner=Vokrii - Minimalistic Perks of Skyrim.esp  override_depth=3
+  058F7A:Skyrim.esm  runtime=00058F7A  type=Perk  editorid=VKR_Spe_050_Salesman_Perk_WasMerchant  winner=Vokrii - Minimalistic Perks of Skyrim.esp  override_depth=2
+  058F7B:Skyrim.esm  runtime=00058F7B  type=Perk  editorid=VKR_Spe_060_Investor_Perk_WasInvestor  winner=Vokrii - Minimalistic Perks of Skyrim.esp  override_depth=2
+  058F7C:Skyrim.esm  runtime=00058F7C  type=Perk  editorid=VKR_Enc_020_SoulSqueezer_Perk_WasSoulSqueezer  winner=Vokrii - Minimalistic Perks of Skyrim.esp  override_depth=3
+  058F7D:Skyrim.esm  runtime=00058F7D  type=Perk  editorid=VKR_Enc_030_ArmorEnchanter_WasCorpusEnchanter  winner=Vokrii - Minimalistic Perks of Skyrim.esp  override_depth=3
+  058F7E:Skyrim.esm  runtime=00058F7E  type=Perk  editorid=VKR_Enc_030_WeaponEnchanter_Perk_WasInsightfulEnchanter  winner=Vokrii - Minimalistic Perks of Skyrim.esp  override_depth=2
+  058F7F:Skyrim.esm  runtime=00058F7F  type=Perk  editorid=VKR_Enc_100_ExtraEffect_Perk_WasExtraEffect  winner=Vokrii - Minimalistic Perks of Skyrim.esp  override_depth=2
+  058F80:Skyrim.esm  runtime=00058F80  type=Perk  editorid=VKR_Enc_020_PowerStone1_Perk_WasFireEnchanter  winner=Vokrii - Thaumaturgy Compatibility Patch.esp  override_depth=3
+  058F81:Skyrim.esm  runtime=00058F81  type=Perk  editorid=VKR_Enc_060_SoulEnchanter_Perk_WasFrostEnchanter  winner=Vokrii - Minimalistic Perks of Skyrim.esp  override_depth=2
+  058F82:Skyrim.esm  runtime=00058F82  type=Perk  editorid=VKR_Enc_070_RegaliaEnchanter_Perk_WasStormEnchanter  winner=Vokrii - Minimalistic Perks of Skyrim.esp  override_depth=2
+  059B76:Skyrim.esm  runtime=00059B76  type=Perk  editorid=VKR_Ill_070_MasterOfTheMind1_Perk_WasMasterOfTheMind  winner=Vokrii - Minimalistic Perks of Skyrim.esp  override_depth=3
+  059B77:Skyrim.esm  runtime=00059B77  type=Perk  editorid=VKR_Ill_030_Neverworld_Perk_WasHypnoticGaze  winner=Mysticism - Vokrii Compatibility Patch.esp  override_depth=3
+  059B78:Skyrim.esm  runtime=00059B78  type=Perk  editorid=VKR_Ill_040_Terror_Perk_WasAspectOfTerror  winner=Vokrii - Minimalistic Perks of Skyrim.esp  override_depth=3
+  05F56F:Skyrim.esm  runtime=0005F56F  type=Perk  editorid=VKR_One_030_BasicSword1_Perk_WasBladesman1  winner=Vokrii - Apply Spell Conditions Fix.esp  override_depth=5
+  05F592:Skyrim.esm  runtime=0005F592  type=Perk  editorid=VKR_One_030_BasicMace1_Perk_WasBoneBreaker1  winner=Vokrii - Apply Spell Conditions Fix.esp  override_depth=4
+  05F594:Skyrim.esm  runtime=0005F594  type=Perk  editorid=VKR_Bck_050_DeadlyBash1_Perk_WasDeadlyBash  winner=Vokrii - Minimalistic Perks of Skyrim.esp  override_depth=2
+  0640B3:Skyrim.esm  runtime=000640B3  type=Perk  editorid=VKR_Con_020_MysticBinding_Perk_WasMysticBinding  winner=Vokrii - Minimalistic Perks of Skyrim.esp  override_depth=2
+  068BCC:Skyrim.esm  runtime=00068BCC  type=Perk  editorid=VKR_Res_060_WardAbsorb_Perk_WasWardAbsorb  winner=Vokrii - Minimalistic Perks of Skyrim.esp  override_depth=3
+  079342:Skyrim.esm  runtime=00079342  type=Perk  editorid=VKR_One_old_OneHandedMastery3_Perk_WasArmsman3  winner=Vokrii - Minimalistic Perks of Skyrim.esp  override_depth=2
+  079343:Skyrim.esm  runtime=00079343  type=Perk  editorid=VKR_One_old_OneHandedMastery2_Perk_WasArmsman2  winner=Vokrii - Minimalistic Perks of Skyrim.esp  override_depth=2
+  079344:Skyrim.esm  runtime=00079344  type=Perk  editorid=VKR_One_old_OneHandedMastery4_Perk_WasArmsman4  winner=Vokrii - Minimalistic Perks of Skyrim.esp  override_depth=2
+  079345:Skyrim.esm  runtime=00079345  type=Perk  editorid=VKR_One_old_OneHandedMastery5_Perk_WasArmsman5  winner=Vokrii - Minimalistic Perks of Skyrim.esp  override_depth=2
+  079346:Skyrim.esm  runtime=00079346  type=Perk  editorid=VKR_Two_old_TwoHandedMastery2_Perk_WasBarbarian2  winner=Vokrii - Minimalistic Perks of Skyrim.esp  override_depth=2
+  079347:Skyrim.esm  runtime=00079347  type=Perk  editorid=VKR_Two_old_TwoHandedMastery3_Perk_WasBarbarian3  winner=Vokrii - Minimalistic Perks of Skyrim.esp  override_depth=2
+  079348:Skyrim.esm  runtime=00079348  type=Perk  editorid=VKR_Two_old_TwoHandedMastery4_Perk_WasBarbarian4  winner=Vokrii - Minimalistic Perks of Skyrim.esp  override_depth=2
+  079349:Skyrim.esm  runtime=00079349  type=Perk  editorid=VKR_Two_old_TwoHandedMastery5_Perk_WasBarbarian5  winner=Vokrii - Minimalistic Perks of Skyrim.esp  override_depth=2
+  07934A:Skyrim.esm  runtime=0007934A  type=Perk  editorid=VKR_Arc_000_ArcheryMastery2_Perk_WasOverdraw2  winner=Vokrii - Minimalistic Perks of Skyrim.esp  override_depth=2
+  07934B:Skyrim.esm  runtime=0007934B  type=Perk  editorid=VKR_Arc_000_ArcheryMastery3_Perk_WasOverdraw3  winner=Vokrii - Minimalistic Perks of Skyrim.esp  override_depth=2
+  07934D:Skyrim.esm  runtime=0007934D  type=Perk  editorid=VKR_Arc_000_ArcheryMastery4_Perk_WasOverdraw4  winner=Vokrii - Minimalistic Perks of Skyrim.esp  override_depth=2
+  079354:Skyrim.esm  runtime=00079354  type=Perk  editorid=VKR_Arc_000_ArcheryMastery5_Perk_WasOverdraw5  winner=Vokrii - Minimalistic Perks of Skyrim.esp  override_depth=2
+  079355:Skyrim.esm  runtime=00079355  type=Perk  editorid=VKR_Bck_old_BlockMastery2_Perk_WasShieldWall2  winner=Vokrii - Minimalistic Perks of Skyrim.esp  override_depth=3
+  079356:Skyrim.esm  runtime=00079356  type=Perk  editorid=VKR_Bck_old_BlockMastery3_Perk_WasShieldWall3  winner=Vokrii - Minimalistic Perks of Skyrim.esp  override_depth=2
+  079357:Skyrim.esm  runtime=00079357  type=Perk  editorid=VKR_Bck_old_BlockMastery4_Perk_WasShieldWall4  winner=Vokrii - Minimalistic Perks of Skyrim.esp  override_depth=3
+  079358:Skyrim.esm  runtime=00079358  type=Perk  editorid=VKR_Bck_old_BlockMastery5_Perk_WasShieldWall5  winner=Vokrii - Minimalistic Perks of Skyrim.esp  override_depth=3
+  07935E:Skyrim.esm  runtime=0007935E  type=Perk  editorid=VKR_Hea_old_HeavyArmorMastery2_Perk_WasJuggernaut2  winner=Vokrii - Minimalistic Perks of Skyrim.esp  override_depth=2
+  079361:Skyrim.esm  runtime=00079361  type=Perk  editorid=VKR_Hea_old_HeavyArmorMastery3_Perk_WasJuggernaut3  winner=Vokrii - Minimalistic Perks of Skyrim.esp  override_depth=2
+  079362:Skyrim.esm  runtime=00079362  type=Perk  editorid=VKR_Hea_old_HeavyArmorMastery4_Perk_WasJuggernaut4  winner=Vokrii - Minimalistic Perks of Skyrim.esp  override_depth=2
+  079374:Skyrim.esm  runtime=00079374  type=Perk  editorid=VKR_Hea_old_HeavyArmorMastery5_Perk_WasJuggernaut5  winner=Vokrii - Minimalistic Perks of Skyrim.esp  override_depth=2
+  079376:Skyrim.esm  runtime=00079376  type=Perk  editorid=VKR_Lia_old_LightArmorMastery2_Perk_WasAgileDefender2  winner=Vokrii - Minimalistic Perks of Skyrim.esp  override_depth=2
+  079389:Skyrim.esm  runtime=00079389  type=Perk  editorid=VKR_Lia_old_LightArmorMastery3_Perk_WasAgileDefender3  winner=Vokrii - Minimalistic Perks of Skyrim.esp  override_depth=2
+  079391:Skyrim.esm  runtime=00079391  type=Perk  editorid=VKR_Lia_old_LightArmorMastery4_Perk_WasAgileDefender4  winner=Vokrii - Minimalistic Perks of Skyrim.esp  override_depth=2
+  079392:Skyrim.esm  runtime=00079392  type=Perk  editorid=VKR_Lia_old_LightArmorMastery5_Perk_WasAgileDefender5  winner=Vokrii - Minimalistic Perks of Skyrim.esp  override_depth=2
+  096590:Skyrim.esm  runtime=00096590  type=Perk  editorid=VKR_Pic_050_ExtraPockets_Perk_WasHiddenPockets  winner=Vokrii - Minimalistic Perks of Skyrim.esp  override_depth=3
+  0A3F64:Skyrim.esm  runtime=000A3F64  type=Perk  editorid=VKR_Res_100_Intervention_Perk  winner=Vokrii - Minimalistic Perks of Skyrim.esp  override_depth=3
+  0BABE4:Skyrim.esm  runtime=000BABE4  type=Perk  editorid=VKR_One_000_OneHandedMastery_Perk_WasArmsman1  winner=Vokrii - Minimalistic Perks of Skyrim.esp  override_depth=2
+  0BABE8:Skyrim.esm  runtime=000BABE8  type=Perk  editorid=VKR_Two_000_TwoHandedMastery_Perk_WasBarbarian1  winner=Vokrii - Minimalistic Perks of Skyrim.esp  override_depth=2
+  0BABED:Skyrim.esm  runtime=000BABED  type=Perk  editorid=VKR_Arc_000_ArcheryMastery_Perk_WasOverdraw1  winner=Vokrii - Minimalistic Perks of Skyrim.esp  override_depth=2
+  0BCCAE:Skyrim.esm  runtime=000BCCAE  type=Perk  editorid=VKR_Bck_000_BlockMastery_Perk_WasShieldWall1  winner=Vokrii - Minimalistic Perks of Skyrim.esp  override_depth=3
+  0BCD2A:Skyrim.esm  runtime=000BCD2A  type=Perk  editorid=VKR_Hea_000_HeavyArmorMastery_Perk_WasJuggernaut1  winner=Vokrii - Minimalistic Perks of Skyrim.esp  override_depth=2
+  0BCD2B:Skyrim.esm  runtime=000BCD2B  type=Perk  editorid=VKR_Hea_020_Cushioned1_Perk_WasCushioned  winner=Vokrii - Minimalistic Perks of Skyrim.esp  override_depth=2
+  0BE123:Skyrim.esm  runtime=000BE123  type=Perk  editorid=VKR_Lia_000_LightArmorMastery_Perk_WasAgileDefender1  winner=Vokrii - Minimalistic Perks of Skyrim.esp  override_depth=2
+  0BE124:Skyrim.esm  runtime=000BE124  type=Perk  editorid=VKR_Pic_000_PickpocketMastery_Perk_WasLightFingers1  winner=Vokrii - Minimalistic Perks of Skyrim.esp  override_depth=3
+  0BE125:Skyrim.esm  runtime=000BE125  type=Perk  editorid=VKR_Loc_old_LockpickingMastery2_Perk_WasLocks2  winner=Vokrii - Minimalistic Perks of Skyrim.esp  override_depth=2
+  0BE126:Skyrim.esm  runtime=000BE126  type=Perk  editorid=VKR_Sne_000_SneakMastery_Perk_WasStealth1  winner=Vokrii - Minimalistic Perks of Skyrim.esp  override_depth=2
+  0BE127:Skyrim.esm  runtime=000BE127  type=Perk  editorid=VKR_Alc_000_AlchemyMastery_Perk_WasAlchemist1  winner=Vokrii - Minimalistic Perks of Skyrim.esp  override_depth=2
+  0BE128:Skyrim.esm  runtime=000BE128  type=Perk  editorid=VKR_Spe_000_SpeechMastery_Perk_WasHaggling1  winner=Vokrii - Minimalistic Perks of Skyrim.esp  override_depth=2
+  0BEE97:Skyrim.esm  runtime=000BEE97  type=Perk  editorid=VKR_Enc_000_EnchantingMastery_Perk_WasEnchanter1  winner=Vokrii - Minimalistic Perks of Skyrim.esp  override_depth=2
+  0C07C6:Skyrim.esm  runtime=000C07C6  type=Perk  editorid=VKR_Sne_old_SneakMastery2_Perk_WasStealth2  winner=Vokrii - Minimalistic Perks of Skyrim.esp  override_depth=2
+  0C07C7:Skyrim.esm  runtime=000C07C7  type=Perk  editorid=VKR_Sne_old_SneakMastery3_Perk_WasStealth3  winner=Vokrii - Minimalistic Perks of Skyrim.esp  override_depth=2
+  0C07C8:Skyrim.esm  runtime=000C07C8  type=Perk  editorid=VKR_Sne_old_SneakMastery4_Perk_WasStealth4  winner=Vokrii - Minimalistic Perks of Skyrim.esp  override_depth=2
+  0C07C9:Skyrim.esm  runtime=000C07C9  type=Perk  editorid=VKR_Sne_old_SneakMastery5_Perk_WasStealth5  winner=Vokrii - Minimalistic Perks of Skyrim.esp  override_depth=2
+  0C07CA:Skyrim.esm  runtime=000C07CA  type=Perk  editorid=VKR_Alc_old_AlchemyMastery2_Perk_WasAlchemist2  winner=Vokrii - Minimalistic Perks of Skyrim.esp  override_depth=2
+  0C07CB:Skyrim.esm  runtime=000C07CB  type=Perk  editorid=VKR_Alc_old_AlchemyMastery3_Perk_WasAlchemist3  winner=Vokrii - Minimalistic Perks of Skyrim.esp  override_depth=2
+  0C07CC:Skyrim.esm  runtime=000C07CC  type=Perk  editorid=VKR_Alc_old_AlchemyMastery4_Perk_WasAlchemist4  winner=Vokrii - Minimalistic Perks of Skyrim.esp  override_depth=2
+  0C07CD:Skyrim.esm  runtime=000C07CD  type=Perk  editorid=VKR_Alc_old_AlchemyMastery5_Perk_WasAlchemist5  winner=Vokrii - Minimalistic Perks of Skyrim.esp  override_depth=2
+  0C07CE:Skyrim.esm  runtime=000C07CE  type=Perk  editorid=VKR_Spe_old_SpeechMastery2_Perk_WasHaggling2  winner=Vokrii - Minimalistic Perks of Skyrim.esp  override_depth=2
+  0C07CF:Skyrim.esm  runtime=000C07CF  type=Perk  editorid=VKR_Spe_old_SpeechMastery3_Perk_WasHaggling3  winner=Vokrii - Minimalistic Perks of Skyrim.esp  override_depth=2
+  0C07D0:Skyrim.esm  runtime=000C07D0  type=Perk  editorid=VKR_Spe_old_SpeechMastery4_Perk_WasHaggling4  winner=Vokrii - Minimalistic Perks of Skyrim.esp  override_depth=2
+  0C07D1:Skyrim.esm  runtime=000C07D1  type=Perk  editorid=VKR_Spe_old_SpeechMastery5_Perk_WasHaggling5  winner=Vokrii - Minimalistic Perks of Skyrim.esp  override_depth=2
+  0C1E90:Skyrim.esm  runtime=000C1E90  type=Perk  editorid=VKR_One_030_BasicSword2_Perk_WasBladesman2  winner=Vokrii - Apply Spell Conditions Fix.esp  override_depth=5
+  0C1E91:Skyrim.esm  runtime=000C1E91  type=Perk  editorid=VKR_One_070_AdvancedSword_Perk_WasBladesman3  winner=Vokrii - Apply Spell Conditions Fix.esp  override_depth=5
+  0C1E92:Skyrim.esm  runtime=000C1E92  type=Perk  editorid=VKR_One_030_BasicMace2_Perk_WasBoneBreaker2  winner=Vokrii - Apply Spell Conditions Fix.esp  override_depth=4
+  0C1E93:Skyrim.esm  runtime=000C1E93  type=Perk  editorid=VKR_One_070_AdvancedMace_Perk_WasBoneBreaker3  winner=Vokrii - Apply Spell Conditions Fix.esp  override_depth=4
+  0C1E94:Skyrim.esm  runtime=000C1E94  type=Perk  editorid=VKR_Two_030_BasicGreatsword2_Perk_WasBladesman2  winner=Vokrii - Apply Spell Conditions Fix.esp  override_depth=5
+  0C1E95:Skyrim.esm  runtime=000C1E95  type=Perk  editorid=VKR_Two_070_AdvancedGreatsword_Perk_WasBladesman3  winner=Vokrii - Apply Spell Conditions Fix.esp  override_depth=5
+  0C1E96:Skyrim.esm  runtime=000C1E96  type=Perk  editorid=VKR_Two_030_BasicWarhammer2_Perk_WasSkullcrusher2  winner=Vokrii - Apply Spell Conditions Fix.esp  override_depth=4
+  0C1E97:Skyrim.esm  runtime=000C1E97  type=Perk  editorid=VKR_Two_070_AdvancedWarhammer_Perk_WasSkullcrusher3  winner=Vokrii - Apply Spell Conditions Fix.esp  override_depth=4
+  0C3678:Skyrim.esm  runtime=000C3678  type=Perk  editorid=VKR_One_030_BasicWarAxe2_Perk_WasHackAndSlash2  winner=Vokrii - Apply Spell Conditions Fix.esp  override_depth=7
+  0C3679:Skyrim.esm  runtime=000C3679  type=Perk  editorid=VKR_One_070_AdvancedWarAxe_Perk_WasHackAndSlash3  winner=Vokrii - Apply Spell Conditions Fix.esp  override_depth=7
+  0C367C:Skyrim.esm  runtime=000C367C  type=Perk  editorid=VKR_Enc_old_EnchantingMastery2_Perk_WasEnchanter2  winner=Vokrii - Minimalistic Perks of Skyrim.esp  override_depth=2
+  0C367D:Skyrim.esm  runtime=000C367D  type=Perk  editorid=VKR_Enc_old_EnchantingMastery3_Perk_WasEnchanter3  winner=Vokrii - Minimalistic Perks of Skyrim.esp  override_depth=2
+  0C367E:Skyrim.esm  runtime=000C367E  type=Perk  editorid=VKR_Enc_old_EnchantingMastery4_Perk_WasEnchanter4  winner=Vokrii - Minimalistic Perks of Skyrim.esp  override_depth=2
+  0C367F:Skyrim.esm  runtime=000C367F  type=Perk  editorid=VKR_Enc_old_EnchantingMastery5_Perk_WasEnchanter5  winner=Vokrii - Minimalistic Perks of Skyrim.esp  override_depth=2
+  0C3680:Skyrim.esm  runtime=000C3680  type=Perk  editorid=VKR_Loc_old_LockpickingMastery3_Perk_WasLocks3  winner=Vokrii - Minimalistic Perks of Skyrim.esp  override_depth=2
+  0C3681:Skyrim.esm  runtime=000C3681  type=Perk  editorid=VKR_Loc_old_LockpickingMastery4_Perk_WasLocks4  winner=Vokrii - Minimalistic Perks of Skyrim.esp  override_depth=2
+  0C3682:Skyrim.esm  runtime=000C3682  type=Perk  editorid=VKR_Loc_old_LockpickingMastery5_Perk_WasLocks5  winner=Vokrii - Minimalistic Perks of Skyrim.esp  override_depth=2
+  0C44B5:Skyrim.esm  runtime=000C44B5  type=Perk  editorid=VKR_Ill_050_IronMaiden_Perk_WasRage  winner=Mysticism - Vokrii Compatibility Patch.esp  override_depth=3
+  0C44B7:Skyrim.esm  runtime=000C44B7  type=Perk  editorid=VKR_Alt_old_AlterationMastery2_Perk_WasAlteration2  winner=Vokrii - Minimalistic Perks of Skyrim.esp  override_depth=3
+  0C44B8:Skyrim.esm  runtime=000C44B8  type=Perk  editorid=VKR_Alt_old_AlterationMastery3_Perk_WasAlteration3  winner=Vokrii - Minimalistic Perks of Skyrim.esp  override_depth=3
+  0C44B9:Skyrim.esm  runtime=000C44B9  type=Perk  editorid=VKR_Alt_old_AlterationMastery4_Perk_WasAlteration4  winner=Vokrii - Minimalistic Perks of Skyrim.esp  override_depth=3
+  0C44BA:Skyrim.esm  runtime=000C44BA  type=Perk  editorid=VKR_Alt_old_AlterationMastery5_Perk_WasAlteration5  winner=Vokrii - Minimalistic Perks of Skyrim.esp  override_depth=3
+  0C44BB:Skyrim.esm  runtime=000C44BB  type=Perk  editorid=VKR_Con_old_ConjurationMastery2_Perk_WasConjuration2  winner=Vokrii - Minimalistic Perks of Skyrim.esp  override_depth=3
+  0C44BC:Skyrim.esm  runtime=000C44BC  type=Perk  editorid=VKR_Con_old_ConjurationMastery3_Perk_WasConjuration3  winner=Vokrii - Minimalistic Perks of Skyrim.esp  override_depth=3
+  0C44BD:Skyrim.esm  runtime=000C44BD  type=Perk  editorid=VKR_Con_old_ConjurationMastery4_Perk_WasConjuration4  winner=Vokrii - Minimalistic Perks of Skyrim.esp  override_depth=3
+  0C44BE:Skyrim.esm  runtime=000C44BE  type=Perk  editorid=VKR_Con_old_ConjurationMastery5_Perk_WasConjuration5  winner=Vokrii - Minimalistic Perks of Skyrim.esp  override_depth=3
+  0C44BF:Skyrim.esm  runtime=000C44BF  type=Perk  editorid=VKR_Des_old_DestructionMastery2_Perk_WasDestruction2  winner=Vokrii - Minimalistic Perks of Skyrim.esp  override_depth=3
+  0C44C0:Skyrim.esm  runtime=000C44C0  type=Perk  editorid=VKR_Des_old_DestructionMastery3_Perk_WasDestruction3  winner=Vokrii - Minimalistic Perks of Skyrim.esp  override_depth=3
+  0C44C1:Skyrim.esm  runtime=000C44C1  type=Perk  editorid=VKR_Des_old_DestructionMastery4_Perk_WasDestruction4  winner=Vokrii - Minimalistic Perks of Skyrim.esp  override_depth=3
+  0C44C2:Skyrim.esm  runtime=000C44C2  type=Perk  editorid=VKR_Des_old_DestructionMastery5_Perk_WasDestruction5  winner=Vokrii - Minimalistic Perks of Skyrim.esp  override_depth=3
+  0C44C3:Skyrim.esm  runtime=000C44C3  type=Perk  editorid=VKR_Ill_old_IllusionMastery1_Perk_WasIllusion2  winner=Vokrii - Minimalistic Perks of Skyrim.esp  override_depth=3
+  0C44C4:Skyrim.esm  runtime=000C44C4  type=Perk  editorid=VKR_Ill_old_IllusionMastery1_Perk_WasIllusion3  winner=Vokrii - Minimalistic Perks of Skyrim.esp  override_depth=3
+  0C44C5:Skyrim.esm  runtime=000C44C5  type=Perk  editorid=VKR_Ill_old_IllusionMastery1_Perk_WasIllusion4  winner=Vokrii - Minimalistic Perks of Skyrim.esp  override_depth=3
+  0C44C6:Skyrim.esm  runtime=000C44C6  type=Perk  editorid=VKR_Ill_old_IllusionMastery1_Perk_WasIllusion5  winner=Vokrii - Minimalistic Perks of Skyrim.esp  override_depth=3
+  0C44C7:Skyrim.esm  runtime=000C44C7  type=Perk  editorid=VKR_Res_old_RestorationMastery2_Perk_WasRestoration2  winner=Vokrii - Minimalistic Perks of Skyrim.esp  override_depth=3
+  0C44C8:Skyrim.esm  runtime=000C44C8  type=Perk  editorid=VKR_Res_old_RestorationMastery3_Perk_WasRestoration3  winner=Vokrii - Minimalistic Perks of Skyrim.esp  override_depth=3
+  0C44C9:Skyrim.esm  runtime=000C44C9  type=Perk  editorid=VKR_Res_old_RestorationMastery4_Perk_WasRestoration4  winner=Vokrii - Minimalistic Perks of Skyrim.esp  override_depth=3
+  0C44CA:Skyrim.esm  runtime=000C44CA  type=Perk  editorid=VKR_Res_old_RestorationMastery5_Perk_WasRestoration5  winner=Vokrii - Minimalistic Perks of Skyrim.esp  override_depth=3
+  0C5C05:Skyrim.esm  runtime=000C5C05  type=Perk  editorid=VKR_Two_030_BasicBattleaxe1_Perk_WasLimbsplitter1  winner=Vokrii - Apply Spell Conditions Fix.esp  override_depth=8
+  0C5C06:Skyrim.esm  runtime=000C5C06  type=Perk  editorid=VKR_Two_030_BasicBattleaxe2_Perk_WasLimbsplitter2  winner=Vokrii - Apply Spell Conditions Fix.esp  override_depth=8
+  0C5C07:Skyrim.esm  runtime=000C5C07  type=Perk  editorid=VKR_Two_070_AdvancedBattleaxe_Perk_WasLimbsplitter3  winner=Vokrii - Apply Spell Conditions Fix.esp  override_depth=8
+  0CB406:Skyrim.esm  runtime=000CB406  type=Perk  editorid=VKR_One_050_ValorousCharge_Perk_WasCriticalCharge  winner=Vokrii - Minimalistic Perks of Skyrim.esp  override_depth=2
+  0CB407:Skyrim.esm  runtime=000CB407  type=Perk  editorid=VKR_Two_050_ViciousCharge_Perk_WasGreatCriticalCharge  winner=Vokrii - Minimalistic Perks of Skyrim.esp  override_depth=2
+  0CB419:Skyrim.esm  runtime=000CB419  type=Perk  editorid=VKR_Con_030_Atromancer_Perk_WasAtromancy  winner=Vokrii - Minimalistic Perks of Skyrim.esp  override_depth=2
+  0CB41A:Skyrim.esm  runtime=000CB41A  type=Perk  editorid=VKR_Con_070_ElementalPotency_Perk_WasElementalPotency  winner=Vokrii - Minimalistic Perks of Skyrim.esp  override_depth=2
+  0D5F1C:Skyrim.esm  runtime=000D5F1C  type=Perk  editorid=VKR_Con_100_TwinSouls_Perk_WasTwinSouls  winner=Vokrii - Minimalistic Perks of Skyrim.esp  override_depth=5
+  0D7999:Skyrim.esm  runtime=000D7999  type=Perk  editorid=VKR_Alt_020_MageArmor1_Perk_WasMageArmor1  winner=Vokrii - Minimalistic Perks of Skyrim.esp  override_depth=2
+  0D799A:Skyrim.esm  runtime=000D799A  type=Perk  editorid=VKR_Alt_020_MageArmor2_Perk_WasMageArmor2  winner=Vokrii - Minimalistic Perks of Skyrim.esp  override_depth=2
+  0D799B:Skyrim.esm  runtime=000D799B  type=Perk  editorid=VKR_Alt_020_MageArmor3_Perk_WasMageArmor3  winner=Vokrii - Minimalistic Perks of Skyrim.esp  override_depth=2
+  0D799C:Skyrim.esm  runtime=000D799C  type=Perk  editorid=VKR_Con_040_OblivionBinding_Perk_WasOblivionBinding  winner=Vokrii - Minimalistic Perks of Skyrim.esp  override_depth=2
+  0D799E:Skyrim.esm  runtime=000D799E  type=Perk  editorid=VKR_Con_030_SoulStealer_Perk_WasSoulStealer  winner=Vokrii - Minimalistic Perks of Skyrim.esp  override_depth=2
+  0D79A0:Skyrim.esm  runtime=000D79A0  type=Perk  editorid=VKR_Pic_090_MasterThief_Perk_WasKeymaster  winner=Vokrii - Minimalistic Perks of Skyrim.esp  override_depth=2
+  0D8C33:Skyrim.esm  runtime=000D8C33  type=Perk  editorid=VKR_Bck_040_QuickReflexes_Perk_WasQuickReflexes  winner=Vokrii - Minimalistic Perks of Skyrim.esp  override_depth=2
+  0F2CA6:Skyrim.esm  runtime=000F2CA6  type=Perk  editorid=VKR_Alt_000_AlterationMastery_Perk_WasAlteration1  winner=Vokrii - Minimalistic Perks of Skyrim.esp  override_depth=3
+  0F2CA7:Skyrim.esm  runtime=000F2CA7  type=Perk  editorid=VKR_Con_000_ConjurationMastery_Perk_WasConjuration1  winner=Vokrii - Minimalistic Perks of Skyrim.esp  override_depth=3
+  0F2CA8:Skyrim.esm  runtime=000F2CA8  type=Perk  editorid=VKR_Des_000_DestructionMastery_Perk_WasDestruction1  winner=Vokrii - Minimalistic Perks of Skyrim.esp  override_depth=3
+  0F2CA9:Skyrim.esm  runtime=000F2CA9  type=Perk  editorid=VKR_Ill_000_IllusionMastery_Perk_WasIllusion1  winner=Vokrii - Minimalistic Perks of Skyrim.esp  override_depth=3
+  0F2CAA:Skyrim.esm  runtime=000F2CAA  type=Perk  editorid=VKR_Res_000_RestorationMastery_Perk_WasRestoration1  winner=Vokrii - Minimalistic Perks of Skyrim.esp  override_depth=3
+  0F392A:Skyrim.esm  runtime=000F392A  type=Perk  editorid=VKR_Loc_000_LockpickingMastery_Perk_WasLocks1  winner=Vokrii - Minimalistic Perks of Skyrim.esp  override_depth=2
+  0F392E:Skyrim.esm  runtime=000F392E  type=Perk  editorid=VKR_Des_050_AdvancedFlames_Perk_WasIntenseFlames  winner=Vokrii - Minimalistic Perks of Skyrim.esp  override_depth=3
+  0F3933:Skyrim.esm  runtime=000F3933  type=Perk  editorid=VKR_Des_050_AdvancedFrost_Perk_WasDeepFreeze  winner=Vokrii - Minimalistic Perks of Skyrim.esp  override_depth=3
+  0F3F0E:Skyrim.esm  runtime=000F3F0E  type=Perk  editorid=VKR_Des_050_AdvancedShock_Perk_WasDisintegrate  winner=Vokrii - Minimalistic Perks of Skyrim.esp  override_depth=3
+  0FE304:Skyrim.esm  runtime=000FE304  type=Perk  editorid=TorchBashPerk  winner=Vokrii - Minimalistic Perks of Skyrim.esp  override_depth=2
+  1036F0:Skyrim.esm  runtime=001036F0  type=Perk  editorid=VKR_Sne_040_DeadlyAim_Perk_WasDeadlyAim  winner=Vokrii - Minimalistic Perks of Skyrim.esp  override_depth=2
+  103ADA:Skyrim.esm  runtime=00103ADA  type=Perk  editorid=VKR_Arc_040_SteadyHand1_Perk_WasSteadyHand1  winner=Vokrii - Minimalistic Perks of Skyrim.esp  override_depth=3
+  103ADB:Skyrim.esm  runtime=00103ADB  type=Perk  editorid=VKR_Arc_040_SteadyHand2_Perk_WasSteadyHand2  winner=Vokrii - Minimalistic Perks of Skyrim.esp  override_depth=3
+  105F19:Skyrim.esm  runtime=00105F19  type=Perk  editorid=VKR_Arc_070_QuickShot_Perk_WasQuickShot  winner=Vokrii - Minimalistic Perks of Skyrim.esp  override_depth=2
+  105F1C:Skyrim.esm  runtime=00105F1C  type=Perk  editorid=VKR_Arc_020_FarShot1_Perk_WasCriticalShot1  winner=Vokrii - Minimalistic Perks of Skyrim.esp  override_depth=3
+  105F1E:Skyrim.esm  runtime=00105F1E  type=Perk  editorid=VKR_Arc_020_FarShot2_Perk_WasCriticalShot2  winner=Vokrii - Minimalistic Perks of Skyrim.esp  override_depth=3
+  105F1F:Skyrim.esm  runtime=00105F1F  type=Perk  editorid=VKR_Arc_090_HuntersFocus_Perk_WasCriticalShot3  winner=Vokrii - Minimalistic Perks of Skyrim.esp  override_depth=3
+  105F22:Skyrim.esm  runtime=00105F22  type=Perk  editorid=VKR_Lia_040_Windrunner_Perk_WasWindWalker  winner=Vokrii - Minimalistic Perks of Skyrim.esp  override_depth=2
+  105F23:Skyrim.esm  runtime=00105F23  type=Perk  editorid=VKR_Sne_030_SilentRoll1_Perk_WasSilentRoll  winner=Vokrii - Minimalistic Perks of Skyrim.esp  override_depth=2
+  105F24:Skyrim.esm  runtime=00105F24  type=Perk  editorid=VKR_Sne_030_SilentMovement2_Perk_WasSilence  winner=Vokrii - Minimalistic Perks of Skyrim.esp  override_depth=2
+  105F26:Skyrim.esm  runtime=00105F26  type=Perk  editorid=VKR_Loc_060_TreasureHunter_Perk_WasTreasureHunter  winner=Vokrii - Minimalistic Perks of Skyrim.esp  override_depth=2
+  105F28:Skyrim.esm  runtime=00105F28  type=Perk  editorid=VKR_Pic_040_Poisoned_Perk_WasPoisoned  winner=Vokrii - Minimalistic Perks of Skyrim.esp  override_depth=2
+  105F29:Skyrim.esm  runtime=00105F29  type=Perk  editorid=VKR_Spe_080_SpecialStock_Perk_WasIntimidation  winner=Vokrii - Minimalistic Perks of Skyrim.esp  override_depth=2
+  105F2A:Skyrim.esm  runtime=00105F2A  type=Perk  editorid=VKR_Alc_060_SlowMetabolism1_Perk_WasExperimenter2  winner=Vokrii - Minimalistic Perks of Skyrim.esp  override_depth=2
+  105F2B:Skyrim.esm  runtime=00105F2B  type=Perk  editorid=VKR_Alc_070_Alkahest_Perk_WasExperimenter3  winner=Vokrii - Minimalistic Perks of Skyrim.esp  override_depth=3
+  105F2C:Skyrim.esm  runtime=00105F2C  type=Perk  editorid=VKR_Alc_050_Stimulants_Perk_WasSnakeblood  winner=Vokrii - Minimalistic Perks of Skyrim.esp  override_depth=3
+  105F2E:Skyrim.esm  runtime=00105F2E  type=Perk  editorid=VKR_Alc_060_GreenThumb_Perk_WasGreenThumb  winner=Vokrii - Minimalistic Perks of Skyrim.esp  override_depth=3
+  105F2F:Skyrim.esm  runtime=00105F2F  type=Perk  editorid=VKR_Alc_040_ConcentratedPoison1_Perk_WasConcentratedPoison  winner=Vokrii - Minimalistic Perks of Skyrim.esp  override_depth=2
+  105F30:Skyrim.esm  runtime=00105F30  type=Perk  editorid=VKR_Con_040_RiftSummoner1_Perk_WasSummoner1  winner=Vokrii - Minimalistic Perks of Skyrim.esp  override_depth=2
+  105F31:Skyrim.esm  runtime=00105F31  type=Perk  editorid=VKR_Con_040_RiftSummoner2_Perk_WasSummoner2  winner=Vokrii - Minimalistic Perks of Skyrim.esp  override_depth=2
+  105F32:Skyrim.esm  runtime=00105F32  type=Perk  editorid=VKR_Des_040_RuneMaster1_Perk_WasRuneMaster  winner=Vokrii - Minimalistic Perks of Skyrim.esp  override_depth=2
+  105F33:Skyrim.esm  runtime=00105F33  type=Perk  editorid=VKR_Hea_090_GlancingBlows_Perk_WasReflectBlows  winner=Vokrii - Minimalistic Perks of Skyrim.esp  override_depth=2
+  106253:Skyrim.esm  runtime=00106253  type=Perk  editorid=VKR_Bck_070_BlockRunner_Perk_WasBlockRunner  winner=Vokrii - Minimalistic Perks of Skyrim.esp  override_depth=3
+  106256:Skyrim.esm  runtime=00106256  type=Perk  editorid=VKR_One_030_DualFlurry1_Perk_WasDualFlurry1  winner=Vokrii - ADXP Patch.esp  override_depth=4
+  106257:Skyrim.esm  runtime=00106257  type=Perk  editorid=VKR_One_030_DualFlurry2_Perk_WasDualFlurry2  winner=Vokrii - ADXP Patch.esp  override_depth=4
+  106258:Skyrim.esm  runtime=00106258  type=Perk  editorid=VKR_One_060_DualSavagery_Perk_WasDualSavagery  winner=Vokrii - Minimalistic Perks of Skyrim.esp  override_depth=3
+  106259:Skyrim.esm  runtime=00106259  type=Perk  editorid=VKR_Loc_030_QuickHands_Perk_WasQuickHands  winner=Vokrii - Minimalistic Perks of Skyrim.esp  override_depth=2
+  107830:Skyrim.esm  runtime=00107830  type=Perk  editorid=VKR_Loc_050_WaxKey_Perk_WasWaxKey  winner=Vokrii - Minimalistic Perks of Skyrim.esp  override_depth=2
+  107831:Skyrim.esm  runtime=00107831  type=Perk  editorid=VKR_Lia_020_Agility_Perk_WasDeftMovement  winner=Vokrii - Minimalistic Perks of Skyrim.esp  override_depth=3
+  107832:Skyrim.esm  runtime=00107832  type=Perk  editorid=VKR_Hea_070_MatchingHeavySet_Perk_WasMatchingSetHeavy  winner=Vokrii - Minimalistic Perks of Skyrim.esp  override_depth=4
+  108A44:Skyrim.esm  runtime=00108A44  type=Perk  editorid=VKR_Enc_040_SoulSiphon_Perk_WasSoulSiphon  winner=Vokrii - Minimalistic Perks of Skyrim.esp  override_depth=2
+  1090A2:Skyrim.esm  runtime=001090A2  type=Perk  editorid=VKR_Spe_050_Eloquent_Perk_WasPersuasion  winner=Vokrii - Minimalistic Perks of Skyrim.esp  override_depth=2
+  1090A5:Skyrim.esm  runtime=001090A5  type=Perk  editorid=VKR_Spe_090_MasterTrader_Perk_WasMasterTrader  winner=Vokrii - Minimalistic Perks of Skyrim.esp  override_depth=2
+  10FCF8:Skyrim.esm  runtime=0010FCF8  type=Perk  editorid=VKR_Des_030_AugmentedFlames2_Perk_WasAugmentedFlames2  winner=Vokrii - Minimalistic Perks of Skyrim.esp  override_depth=2
+  10FCF9:Skyrim.esm  runtime=0010FCF9  type=Perk  editorid=VKR_Des_030_AugmentedFrost2_Perk_WasAugmentedFrost2  winner=Vokrii - Minimalistic Perks of Skyrim.esp  override_depth=2
+  10FCFA:Skyrim.esm  runtime=0010FCFA  type=Perk  editorid=VKR_Des_030_AugmentedShock2_Perk_WasAugmentedShock2  winner=Vokrii - Minimalistic Perks of Skyrim.esp  override_depth=2
+  00D83A:Dawnguard.esm  runtime=0200D83A  type=Perk  editorid=DLC1DawnguardItemPerk  winner=Vokrii - Minimalistic Perks of Skyrim.esp  override_depth=5
+  024109:Dragonborn.esm  runtime=04024109  type=Perk  editorid=DLC2MatchingSet  winner=Vokrii - Minimalistic Perks of Skyrim.esp  override_depth=4
+  02410A:Dragonborn.esm  runtime=0402410A  type=Perk  editorid=DLC2MatchingSetHeavy  winner=Vokrii - Minimalistic Perks of Skyrim.esp  override_depth=4
+  004EFA:Vokrii - Minimalistic Perks of Skyrim.esp  runtime=65004EFA  type=Perk  editorid=VKR_One_030_BasicDagger1_Perk  winner=Vokrii - Minimalistic Perks of Skyrim.esp  override_depth=1
+  004EFB:Vokrii - Minimalistic Perks of Skyrim.esp  runtime=65004EFB  type=Perk  editorid=VKR_One_030_BasicDagger2_Perk  winner=Vokrii - Minimalistic Perks of Skyrim.esp  override_depth=1
+  004EFC:Vokrii - Minimalistic Perks of Skyrim.esp  runtime=65004EFC  type=Perk  editorid=VKR_One_old_Fangs3_Perk  winner=Vokrii - Minimalistic Perks of Skyrim.esp  override_depth=1
+  005474:Vokrii - Minimalistic Perks of Skyrim.esp  runtime=65005474  type=Perk  editorid=VKR_Two_040_DeathOrGlory_Perk  winner=Vokrii - Minimalistic Perks of Skyrim.esp  override_depth=1
+  007AB5:Vokrii - Minimalistic Perks of Skyrim.esp  runtime=65007AB5  type=Perk  editorid=VKR_Lia_040_KeenSenses_Perk  winner=Vokrii - Minimalistic Perks of Skyrim.esp  override_depth=1
+  007AB8:Vokrii - Minimalistic Perks of Skyrim.esp  runtime=65007AB8  type=Perk  editorid=VKR_Lia_Wardancer_Perk_Proc  winner=Vokrii - Minimalistic Perks of Skyrim.esp  override_depth=1
+  008028:Vokrii - Minimalistic Perks of Skyrim.esp  runtime=65008028  type=Perk  editorid=VKR_Hea_040_FaceOfDeath_Perk  winner=Vokrii - Minimalistic Perks of Skyrim.esp  override_depth=1
+  008029:Vokrii - Minimalistic Perks of Skyrim.esp  runtime=65008029  type=Perk  editorid=VKR_Hea_020_Cushioned2_Perk  winner=Vokrii - Minimalistic Perks of Skyrim.esp  override_depth=1
+  008037:Vokrii - Minimalistic Perks of Skyrim.esp  runtime=65008037  type=Perk  editorid=VKR_Hea_060_ReapTheWhirlwind_Perk  winner=Vokrii - Minimalistic Perks of Skyrim.esp  override_depth=1
+  0085B8:Vokrii - Minimalistic Perks of Skyrim.esp  runtime=650085B8  type=Perk  editorid=VKR_Lia_020_IronFist2_Perk  winner=Vokrii - Minimalistic Perks of Skyrim.esp  override_depth=1
+  009B8B:Vokrii - Minimalistic Perks of Skyrim.esp  runtime=65009B8B  type=Perk  editorid=VKR_Lia_old_Windrunner_Perk  winner=Vokrii - Minimalistic Perks of Skyrim.esp  override_depth=1
+  00A665:Vokrii - Minimalistic Perks of Skyrim.esp  runtime=6500A665  type=Perk  editorid=VKR_Bck_old_DragonTail_Perk  winner=Vokrii - Minimalistic Perks of Skyrim.esp  override_depth=1
+  00ECC6:Vokrii - Minimalistic Perks of Skyrim.esp  runtime=6500ECC6  type=Perk  editorid=VKR_Two_080_BearHide_Perk  winner=Vokrii - Minimalistic Perks of Skyrim.esp  override_depth=1
+  00F229:Vokrii - Minimalistic Perks of Skyrim.esp  runtime=6500F229  type=Perk  editorid=VKR_Two_080_RollingCharge_Perk  winner=Vokrii - Minimalistic Perks of Skyrim.esp  override_depth=1
+  014362:Vokrii - Minimalistic Perks of Skyrim.esp  runtime=65014362  type=Perk  editorid=VKR_Res_030_InspiringAura1_Perk  winner=Vokrii - Minimalistic Perks of Skyrim.esp  override_depth=1
+  01490D:Vokrii - Minimalistic Perks of Skyrim.esp  runtime=6501490D  type=Perk  editorid=VKR_Res_050_Harm_Perk  winner=Vokrii - Minimalistic Perks of Skyrim.esp  override_depth=1
+  014913:Vokrii - Minimalistic Perks of Skyrim.esp  runtime=65014913  type=Perk  editorid=VKR_Alc_080_PlagueDoctor_Perk  winner=Vokrii - Minimalistic Perks of Skyrim.esp  override_depth=1
+  016436:Vokrii - Minimalistic Perks of Skyrim.esp  runtime=65016436  type=Perk  editorid=VKR_Con_070_BloodZombie_Perk  winner=Vokrii - Minimalistic Perks of Skyrim.esp  override_depth=1
+  017F72:Vokrii - Minimalistic Perks of Skyrim.esp  runtime=65017F72  type=Perk  editorid=VKR_Con_080_VoidBrand_Perk  winner=Vokrii - Minimalistic Perks of Skyrim.esp  override_depth=1
+  017F78:Vokrii - Minimalistic Perks of Skyrim.esp  runtime=65017F78  type=Perk  editorid=VKR_Con_060_HollowBinding_Perk  winner=Vokrii - Minimalistic Perks of Skyrim.esp  override_depth=1
+  019A7B:Vokrii - Minimalistic Perks of Skyrim.esp  runtime=65019A7B  type=Perk  editorid=VKR_Con_060_DarkPower1_Perk  winner=Mysticism - Vokrii Compatibility Patch.esp  override_depth=2
+  01AABA:Vokrii - Minimalistic Perks of Skyrim.esp  runtime=6501AABA  type=Perk  editorid=VKR_Con_old_HungerForSouls_Perk  winner=Vokrii - Minimalistic Perks of Skyrim.esp  override_depth=1
+  01B57F:Vokrii - Minimalistic Perks of Skyrim.esp  runtime=6501B57F  type=Perk  editorid=VKR_Alt_060_Initiate_Perk  winner=Vokrii - Minimalistic Perks of Skyrim.esp  override_depth=1
+  01B591:Vokrii - Minimalistic Perks of Skyrim.esp  runtime=6501B591  type=Perk  editorid=VKR_Alt_080_ForceOfWill_Perk  winner=Vokrii - Minimalistic Perks of Skyrim.esp  override_depth=1
+  01B5A7:Vokrii - Minimalistic Perks of Skyrim.esp  runtime=6501B5A7  type=Perk  editorid=VKR_Alt_old_Nullifier_Perk  winner=Vokrii - Minimalistic Perks of Skyrim.esp  override_depth=1
+  01BB2E:Vokrii - Minimalistic Perks of Skyrim.esp  runtime=6501BB2E  type=Perk  editorid=VKR_Des_100_Hellstorm_Perk  winner=Vokrii - Minimalistic Perks of Skyrim.esp  override_depth=1
+  01BB2F:Vokrii - Minimalistic Perks of Skyrim.esp  runtime=6501BB2F  type=Perk  editorid=VKR_Alt_old_Concentration_Perk  winner=Vokrii - Minimalistic Perks of Skyrim.esp  override_depth=1
+  01D661:Vokrii - Minimalistic Perks of Skyrim.esp  runtime=6501D661  type=Perk  editorid=VKR_Alt_060_AlterSelf2_Perk  winner=Vokrii - Minimalistic Perks of Skyrim.esp  override_depth=1
+  020774:Vokrii - Minimalistic Perks of Skyrim.esp  runtime=65020774  type=Perk  editorid=VKR_Spe_020_TonalHarmony_Perk  winner=Vokrii - Minimalistic Perks of Skyrim.esp  override_depth=1
+  023890:Vokrii - Minimalistic Perks of Skyrim.esp  runtime=65023890  type=Perk  editorid=VKR_Spe_070_Beastmaster_Perk  winner=Vokrii - Minimalistic Perks of Skyrim.esp  override_depth=1
+  023E03:Vokrii - Minimalistic Perks of Skyrim.esp  runtime=65023E03  type=Perk  editorid=VKR_Spe_100_Dovahzulaan_Perk  winner=Vokrii - Minimalistic Perks of Skyrim.esp  override_depth=1
+  024E3C:Vokrii - Minimalistic Perks of Skyrim.esp  runtime=65024E3C  type=Perk  editorid=VKR_Des_old_EyeOfTheStorm_Perk  winner=Vokrii - Minimalistic Perks of Skyrim.esp  override_depth=1
+  024E3F:Vokrii - Minimalistic Perks of Skyrim.esp  runtime=65024E3F  type=Perk  editorid=VKR_Des_070_ExpertShock_Perk  winner=Vokrii - Minimalistic Perks of Skyrim.esp  override_depth=1
+  025E86:Vokrii - Minimalistic Perks of Skyrim.esp  runtime=65025E86  type=Perk  editorid=VKR_Des_070_ExpertFire_Perk  winner=Vokrii - Minimalistic Perks of Skyrim.esp  override_depth=1
+  02A503:Vokrii - Minimalistic Perks of Skyrim.esp  runtime=6502A503  type=Perk  editorid=VKR_Des_070_ExpertFrost_Perk  winner=Vokrii - Minimalistic Perks of Skyrim.esp  override_depth=1
+  02B56F:Vokrii - Minimalistic Perks of Skyrim.esp  runtime=6502B56F  type=Perk  editorid=VKR_Alt_060_AlterSelf1_Perk  winner=Vokrii - Minimalistic Perks of Skyrim.esp  override_depth=1
+  02CB0D:Vokrii - Minimalistic Perks of Skyrim.esp  runtime=6502CB0D  type=Perk  editorid=VKR_Alt_050_TelekineticForce1_Perk  winner=Vokrii - Minimalistic Perks of Skyrim.esp  override_depth=1
+  02CB20:Vokrii - Minimalistic Perks of Skyrim.esp  runtime=6502CB20  type=Perk  editorid=VKR_Alt_070_ArcaneGuidance_Perk  winner=Mysticism - Vokrii Compatibility Patch.esp  override_depth=2
+  02D633:Vokrii - Minimalistic Perks of Skyrim.esp  runtime=6502D633  type=Perk  editorid=VKR_Res_070_RebukeUndead_Perk  winner=Vokrii - Minimalistic Perks of Skyrim.esp  override_depth=1
+  03173E:Vokrii - Minimalistic Perks of Skyrim.esp  runtime=6503173E  type=Perk  editorid=VKR_Loc_070_DungeonMaster_Perk  winner=Vokrii - Minimalistic Perks of Skyrim.esp  override_depth=1
+  03222D:Vokrii - Minimalistic Perks of Skyrim.esp  runtime=6503222D  type=Perk  editorid=VKR_Pic_040_DeathsEmperor1_Perk  winner=Vokrii - Minimalistic Perks of Skyrim.esp  override_depth=1
+  032231:Vokrii - Minimalistic Perks of Skyrim.esp  runtime=65032231  type=Perk  editorid=VKR_Pic_040_DeathsEmperor2_Perk  winner=Vokrii - Minimalistic Perks of Skyrim.esp  override_depth=1
+  032D1F:Vokrii - Minimalistic Perks of Skyrim.esp  runtime=65032D1F  type=Perk  editorid=VKR_Pic_030_Payday_Perk  winner=Vokrii - Minimalistic Perks of Skyrim.esp  override_depth=1
+  03328D:Vokrii - Minimalistic Perks of Skyrim.esp  runtime=6503328D  type=Perk  editorid=VKR_Pic_old_SlumRat_Perk  winner=Vokrii - Minimalistic Perks of Skyrim.esp  override_depth=1
+  034873:Vokrii - Minimalistic Perks of Skyrim.esp  runtime=65034873  type=Perk  editorid=VKR_Pic_060_LawlessTimes1_Perk  winner=Vokrii - Minimalistic Perks of Skyrim.esp  override_depth=1
+  0363D5:Vokrii - Minimalistic Perks of Skyrim.esp  runtime=650363D5  type=Perk  editorid=VKR_Sne_070_Backstab_Perk  winner=Vokrii - Minimalistic Perks of Skyrim.esp  override_depth=1
+  03799E:Vokrii - Minimalistic Perks of Skyrim.esp  runtime=6503799E  type=Perk  editorid=VKR_Sne_040_Shadowcaster_Perk  winner=Vokrii - Minimalistic Perks of Skyrim.esp  override_depth=1
+  03848A:Vokrii - Minimalistic Perks of Skyrim.esp  runtime=6503848A  type=Perk  editorid=VKR_Enc_080_StaffRecharge_Perk  winner=Vokrii - Minimalistic Perks of Skyrim.esp  override_depth=1
+  03FD0F:Vokrii - Minimalistic Perks of Skyrim.esp  runtime=6503FD0F  type=Perk  editorid=VKR_Sne_080_CloakAndDagger_Perk  winner=Vokrii - Minimalistic Perks of Skyrim.esp  override_depth=1
+  03FD10:Vokrii - Minimalistic Perks of Skyrim.esp  runtime=6503FD10  type=Perk  editorid=VKR_Sne_CloakAndDagger_Perk_Proc  winner=Vokrii - Minimalistic Perks of Skyrim.esp  override_depth=1
+  04D4E3:Vokrii - Minimalistic Perks of Skyrim.esp  runtime=6504D4E3  type=Perk  editorid=VKR_Lia_090_KiStrike_Perk  winner=Vokrii - Minimalistic Perks of Skyrim.esp  override_depth=1
+  0515BF:Vokrii - Minimalistic Perks of Skyrim.esp  runtime=650515BF  type=Perk  editorid=VKR_Pic_SlumRat_Perk_Proc  winner=Vokrii - Minimalistic Perks of Skyrim.esp  override_depth=1
+  069031:Vokrii - Minimalistic Perks of Skyrim.esp  runtime=65069031  type=Perk  editorid=VKR_Lia_020_IronFist3_Perk  winner=Vokrii - Minimalistic Perks of Skyrim.esp  override_depth=1
+  0B2846:Vokrii - Minimalistic Perks of Skyrim.esp  runtime=650B2846  type=Perk  editorid=VKR_Res_080_Blessed_Perk  winner=Vokrii - Minimalistic Perks of Skyrim.esp  override_depth=1
+  0B2851:Vokrii - Minimalistic Perks of Skyrim.esp  runtime=650B2851  type=Perk  editorid=VKR_Res_060_SunsJudgment1_Perk  winner=Vokrii - Minimalistic Perks of Skyrim.esp  override_depth=1
+  0B2852:Vokrii - Minimalistic Perks of Skyrim.esp  runtime=650B2852  type=Perk  editorid=VKR_Res_090_EternalFlame_Perk  winner=Mysticism - Vokrii Compatibility Patch.esp  override_depth=2
+  0DD7FA:Vokrii - Minimalistic Perks of Skyrim.esp  runtime=650DD7FA  type=Perk  editorid=VKR_Hea_100_FaceOfTheMountain_Perk  winner=Vokrii - Minimalistic Perks of Skyrim.esp  override_depth=1
+  20AA8A:Vokrii - Minimalistic Perks of Skyrim.esp  runtime=6520AA8A  type=Perk  editorid=VKR_Smh_060_LayeredPadding_Perk  winner=Vokrii - Minimalistic Perks of Skyrim.esp  override_depth=1
+  20AA8C:Vokrii - Minimalistic Perks of Skyrim.esp  runtime=6520AA8C  type=Perk  editorid=VKR_Smh_old_DecorativeSmithing_Perk  winner=Vokrii - Minimalistic Perks of Skyrim.esp  override_depth=1
+  20AA97:Vokrii - Minimalistic Perks of Skyrim.esp  runtime=6520AA97  type=Perk  editorid=VKR_Smh_080_HighYieldMining_Perk  winner=Vokrii - Minimalistic Perks of Skyrim.esp  override_depth=1
+  20AA98:Vokrii - Minimalistic Perks of Skyrim.esp  runtime=6520AA98  type=Perk  editorid=VKR_Smh_old_Clothesmaker_Perk  winner=Vokrii - Minimalistic Perks of Skyrim.esp  override_depth=1
+  20AAAF:Vokrii - Minimalistic Perks of Skyrim.esp  runtime=6520AAAF  type=Perk  editorid=VKR_Smh_020_ArmorPadding_Perk  winner=Vokrii - Minimalistic Perks of Skyrim.esp  override_depth=1
+  214CB6:Vokrii - Minimalistic Perks of Skyrim.esp  runtime=65214CB6  type=Perk  editorid=VKR_Enc_040_ScrollSage1_Perk  winner=Vokrii - Minimalistic Perks of Skyrim.esp  override_depth=1
+  214CB8:Vokrii - Minimalistic Perks of Skyrim.esp  runtime=65214CB8  type=Perk  editorid=VKR_Enc_040_ScrollSage2_Perk  winner=Vokrii - Minimalistic Perks of Skyrim.esp  override_depth=1
+  214CB9:Vokrii - Minimalistic Perks of Skyrim.esp  runtime=65214CB9  type=Perk  editorid=VKR_Enc_040_ScrollSage3_Perk  winner=Vokrii - Minimalistic Perks of Skyrim.esp  override_depth=1
+  214CBD:Vokrii - Minimalistic Perks of Skyrim.esp  runtime=65214CBD  type=Perk  editorid=VKR_Enc_020_PowerStone2_Perk  winner=Vokrii - Thaumaturgy Compatibility Patch.esp  override_depth=2
+  219DC7:Vokrii - Minimalistic Perks of Skyrim.esp  runtime=65219DC7  type=Perk  editorid=VKR_Arc_040_BreachingShot_Perk  winner=Vokrii - Apply Spell Conditions Fix.esp  override_depth=2
+  219DCC:Vokrii - Minimalistic Perks of Skyrim.esp  runtime=65219DCC  type=Perk  editorid=VKR_Arc_080_Gore_Perk  winner=Vokrii - Apply Spell Conditions Fix.esp  override_depth=2
+  223FE2:Vokrii - Minimalistic Perks of Skyrim.esp  runtime=65223FE2  type=Perk  editorid=VKR_Bck_050_DeadlyBash2_Perk  winner=Vokrii - Minimalistic Perks of Skyrim.esp  override_depth=1
+  223FE6:Vokrii - Minimalistic Perks of Skyrim.esp  runtime=65223FE6  type=Perk  editorid=VKR_Bck_040_TorchBash_Perk  winner=Vokrii - Minimalistic Perks of Skyrim.esp  override_depth=1
+  2290E9:Vokrii - Minimalistic Perks of Skyrim.esp  runtime=652290E9  type=Perk  editorid=VKR_Lia_100_Untouchable_Perk  winner=Vokrii - Minimalistic Perks of Skyrim.esp  override_depth=1
+  2290EB:Vokrii - Minimalistic Perks of Skyrim.esp  runtime=652290EB  type=Perk  editorid=VKR_Lia_060_Wardancer_Perk  winner=Vokrii - Minimalistic Perks of Skyrim.esp  override_depth=1
+  2290EE:Vokrii - Minimalistic Perks of Skyrim.esp  runtime=652290EE  type=Perk  editorid=VKR_Lia_060_FlurryOfBlows1_Perk  winner=Vokrii - Apply Spell Conditions Fix.esp  override_depth=2
+  24776B:Vokrii - Minimalistic Perks of Skyrim.esp  runtime=6524776B  type=Perk  editorid=VKR_Res_030_InspiringAura2_Perk  winner=Vokrii - Minimalistic Perks of Skyrim.esp  override_depth=1
+  25197E:Vokrii - Minimalistic Perks of Skyrim.esp  runtime=6525197E  type=Perk  editorid=VKR_Alt_050_TelekineticForce2_Perk  winner=Vokrii - Minimalistic Perks of Skyrim.esp  override_depth=1
+  251981:Vokrii - Minimalistic Perks of Skyrim.esp  runtime=65251981  type=Perk  editorid=VKR_Alt_090_TelekineticProdigy_Perk  winner=Mysticism - Vokrii Compatibility Patch.esp  override_depth=2
+  25BB92:Vokrii - Minimalistic Perks of Skyrim.esp  runtime=6525BB92  type=Perk  editorid=VKR_Des_060_HethothsDisjunction_Perk  winner=Vokrii - Minimalistic Perks of Skyrim.esp  override_depth=1
+  265D9A:Vokrii - Minimalistic Perks of Skyrim.esp  runtime=65265D9A  type=Perk  editorid=VKR_Loc_040_Lockdown_Perk  winner=Vokrii - Minimalistic Perks of Skyrim.esp  override_depth=1
+  265D9B:Vokrii - Minimalistic Perks of Skyrim.esp  runtime=65265D9B  type=Perk  editorid=VKR_Loc_060_Hotwire_Perk  winner=Vokrii - Minimalistic Perks of Skyrim.esp  override_depth=1
+  26AEB2:Vokrii - Minimalistic Perks of Skyrim.esp  runtime=6526AEB2  type=Perk  editorid=VKR_Loc_090_Archaeologist_Perk  winner=Vokrii - Minimalistic Perks of Skyrim.esp  override_depth=1
+  26AEB5:Vokrii - Minimalistic Perks of Skyrim.esp  runtime=6526AEB5  type=Perk  editorid=VKR_Loc_090_Overdrive_Perk  winner=Vokrii - Minimalistic Perks of Skyrim.esp  override_depth=1
+  2750CB:Vokrii - Minimalistic Perks of Skyrim.esp  runtime=652750CB  type=Perk  editorid=VKR_Spe_060_Skald_Perk  winner=Vokrii - Minimalistic Perks of Skyrim.esp  override_depth=1
+  2750CF:Vokrii - Minimalistic Perks of Skyrim.esp  runtime=652750CF  type=Perk  editorid=VKR_Spe_040_WordsOfPower1_Perk  winner=Vokrii - Minimalistic Perks of Skyrim.esp  override_depth=1
+  2750D4:Vokrii - Minimalistic Perks of Skyrim.esp  runtime=652750D4  type=Perk  editorid=VKR_Spe_040_SpeakWithAnimals_Perk  winner=Vokrii - Minimalistic Perks of Skyrim.esp  override_depth=1
+  2750D5:Vokrii - Minimalistic Perks of Skyrim.esp  runtime=652750D5  type=Perk  editorid=VKR_Ill_100_MindThrall_Perk  winner=Vokrii - Minimalistic Perks of Skyrim.esp  override_depth=1
+  27A1E1:Vokrii - Minimalistic Perks of Skyrim.esp  runtime=6527A1E1  type=Perk  editorid=VKR_Alc_100_DoubleToilAndTrouble_Perk  winner=Vokrii - Minimalistic Perks of Skyrim.esp  override_depth=1
+  27F2E3:Vokrii - Minimalistic Perks of Skyrim.esp  runtime=6527F2E3  type=Perk  editorid=VKR_Any_Autoperk_Perk  winner=Vokrii - Minimalistic Perks of Skyrim.esp  override_depth=1
+  28E5EE:Vokrii - Minimalistic Perks of Skyrim.esp  runtime=6528E5EE  type=Perk  editorid=VKR_Des_090_ElementalShield_Perk  winner=Vokrii - Minimalistic Perks of Skyrim.esp  override_depth=1
+  2A7B21:Vokrii - Minimalistic Perks of Skyrim.esp  runtime=652A7B21  type=Perk  editorid=VKR_Des_080_ElementalBarrier_Perk  winner=Vokrii - Minimalistic Perks of Skyrim.esp  override_depth=1
+  2B1D25:Vokrii - Minimalistic Perks of Skyrim.esp  runtime=652B1D25  type=Perk  editorid=VKR_Enc_050_ScrollHunter_Perk  winner=Vokrii - Minimalistic Perks of Skyrim.esp  override_depth=1
+  2B1D26:Vokrii - Minimalistic Perks of Skyrim.esp  runtime=652B1D26  type=Perk  editorid=VKR_Enc_old_Spellscribe_Perk  winner=Vokrii - Minimalistic Perks of Skyrim.esp  override_depth=1
+  2B1D27:Vokrii - Minimalistic Perks of Skyrim.esp  runtime=652B1D27  type=Perk  editorid=VKR_Enc_090_SpiderHunter_Perk  winner=Vokrii - Minimalistic Perks of Skyrim.esp  override_depth=1
+  2B1D28:Vokrii - Minimalistic Perks of Skyrim.esp  runtime=652B1D28  type=Perk  editorid=VKR_Enc_060_Thunderstruck_Perk  winner=Vokrii - Minimalistic Perks of Skyrim.esp  override_depth=1
+  2B1D2A:Vokrii - Minimalistic Perks of Skyrim.esp  runtime=652B1D2A  type=Perk  editorid=VKR_Res_080_MageWard_Perk  winner=Vokrii - Minimalistic Perks of Skyrim.esp  override_depth=1
+  2BBF34:Vokrii - Minimalistic Perks of Skyrim.esp  runtime=652BBF34  type=Perk  editorid=VKR_Res_040_VigilantWard1_Perk  winner=Vokrii - Minimalistic Perks of Skyrim.esp  override_depth=1
+  2C1037:Vokrii - Minimalistic Perks of Skyrim.esp  runtime=652C1037  type=Perk  editorid=VKR_Hea_030_BattleFatigue_Perk  winner=Vokrii - Minimalistic Perks of Skyrim.esp  override_depth=1
+  2C1038:Vokrii - Minimalistic Perks of Skyrim.esp  runtime=652C1038  type=Perk  editorid=VKR_Hea_040_ImmovableObject_Perk  winner=Vokrii - Minimalistic Perks of Skyrim.esp  override_depth=1
+  2C1039:Vokrii - Minimalistic Perks of Skyrim.esp  runtime=652C1039  type=Perk  editorid=VKR_Hea_080_ElementalDefense_Perk  winner=Vokrii - Minimalistic Perks of Skyrim.esp  override_depth=1
+  2C103E:Vokrii - Minimalistic Perks of Skyrim.esp  runtime=652C103E  type=Perk  editorid=VKR_Hea_old_Sovereign_Perk  winner=Vokrii - Minimalistic Perks of Skyrim.esp  override_depth=1
+  2C613F:Vokrii - Minimalistic Perks of Skyrim.esp  runtime=652C613F  type=Perk  editorid=VKR_Lia_old_Agility_Perk  winner=Vokrii - Minimalistic Perks of Skyrim.esp  override_depth=1
+  2C6140:Vokrii - Minimalistic Perks of Skyrim.esp  runtime=652C6140  type=Perk  editorid=VKR_Lia_080_EvasiveSprint_Perk  winner=Vokrii - Minimalistic Perks of Skyrim.esp  override_depth=1
+  2D546B:Vokrii - Minimalistic Perks of Skyrim.esp  runtime=652D546B  type=Perk  editorid=VKR_Lia_060_FlurryOfBlows2_Perk  winner=Vokrii - Minimalistic Perks of Skyrim.esp  override_depth=1
+  2DF671:Vokrii - Minimalistic Perks of Skyrim.esp  runtime=652DF671  type=Perk  editorid=VKR_Bck_020_UnwaveringDefense_Perk  winner=Vokrii - Minimalistic Perks of Skyrim.esp  override_depth=1
+  2DF672:Vokrii - Minimalistic Perks of Skyrim.esp  runtime=652DF672  type=Perk  editorid=VKR_Bck_060_PokeTheDragon_Perk  winner=Vokrii - Minimalistic Perks of Skyrim.esp  override_depth=1
+  2DF673:Vokrii - Minimalistic Perks of Skyrim.esp  runtime=652DF673  type=Perk  editorid=VKR_Bck_100_Stoneheart_Perk  winner=Vokrii - Minimalistic Perks of Skyrim.esp  override_depth=1
+  2DF675:Vokrii - Minimalistic Perks of Skyrim.esp  runtime=652DF675  type=Perk  editorid=VKR_Bck_030_WeaponBlock_Perk  winner=Vokrii - Minimalistic Perks of Skyrim.esp  override_depth=1
+  2DF676:Vokrii - Minimalistic Perks of Skyrim.esp  runtime=652DF676  type=Perk  editorid=VKR_Bck_080_MockingBlow_Perk  winner=Vokrii - Apply Spell Conditions Fix.esp  override_depth=2
+  2EE983:Vokrii - Minimalistic Perks of Skyrim.esp  runtime=652EE983  type=Perk  editorid=VKR_Arc_020_PointBlankShot1_Perk  winner=Vokrii - Minimalistic Perks of Skyrim.esp  override_depth=1
+  2EE984:Vokrii - Minimalistic Perks of Skyrim.esp  runtime=652EE984  type=Perk  editorid=VKR_Arc_020_PointBlankShot2_Perk  winner=Vokrii - Minimalistic Perks of Skyrim.esp  override_depth=1
+  2EE98B:Vokrii - Minimalistic Perks of Skyrim.esp  runtime=652EE98B  type=Perk  editorid=VKR_Arc_080_ArrowToTheKnee_Perk  winner=Vokrii - Apply Spell Conditions Fix.esp  override_depth=2
+  2EE993:Vokrii - Minimalistic Perks of Skyrim.esp  runtime=652EE993  type=Perk  editorid=VKR_Arc_100_PinningShot_Perk  winner=Vokrii - Minimalistic Perks of Skyrim.esp  override_depth=1
+  2EE9A4:Vokrii - Minimalistic Perks of Skyrim.esp  runtime=652EE9A4  type=Perk  editorid=VKR_Arc_060_LionsArrow1_Perk  winner=Vokrii - Minimalistic Perks of Skyrim.esp  override_depth=1
+  2EE9A5:Vokrii - Minimalistic Perks of Skyrim.esp  runtime=652EE9A5  type=Perk  editorid=VKR_Arc_060_LionsArrow2_Perk  winner=Vokrii - Minimalistic Perks of Skyrim.esp  override_depth=1
+  302DB1:Vokrii - Minimalistic Perks of Skyrim.esp  runtime=65302DB1  type=Perk  editorid=VKR_Sne_060_DodgeRoll_Perk  winner=Vokrii - Minimalistic Perks of Skyrim.esp  override_depth=1
+  302DB3:Vokrii - Minimalistic Perks of Skyrim.esp  runtime=65302DB3  type=Perk  editorid=VKR_Sne_050_BlindSpot_Perk  winner=Vokrii - Minimalistic Perks of Skyrim.esp  override_depth=1
+  302DB5:Vokrii - Minimalistic Perks of Skyrim.esp  runtime=65302DB5  type=Perk  editorid=VKR_Sne_LungeRoll_Perk_Proc  winner=Vokrii - Minimalistic Perks of Skyrim.esp  override_depth=1
+  302DB6:Vokrii - Minimalistic Perks of Skyrim.esp  runtime=65302DB6  type=Perk  editorid=VKR_Sne_old_LungeRoll_Perk  winner=Vokrii - Minimalistic Perks of Skyrim.esp  override_depth=1
+  302DB8:Vokrii - Minimalistic Perks of Skyrim.esp  runtime=65302DB8  type=Perk  editorid=VKR_Sne_SilentRoll2_Perk_Proc  winner=Vokrii - Minimalistic Perks of Skyrim.esp  override_depth=1
+  302DB9:Vokrii - Minimalistic Perks of Skyrim.esp  runtime=65302DB9  type=Perk  editorid=VKR_Sne_030_SilentRoll2_Perk  winner=Vokrii - Minimalistic Perks of Skyrim.esp  override_depth=1
+  302DBE:Vokrii - Minimalistic Perks of Skyrim.esp  runtime=65302DBE  type=Perk  editorid=VKR_Sne_090_FogOfWar_Perk  winner=Vokrii - Minimalistic Perks of Skyrim.esp  override_depth=1
+  302DC4:Vokrii - Minimalistic Perks of Skyrim.esp  runtime=65302DC4  type=Perk  editorid=VKR_Sne_100_EscapeArtist_Perk  winner=Vokrii - Minimalistic Perks of Skyrim.esp  override_depth=1
+  307EC6:Vokrii - Minimalistic Perks of Skyrim.esp  runtime=65307EC6  type=Perk  editorid=VKR_Ill_090_Blur_Perk  winner=Vokrii - Minimalistic Perks of Skyrim.esp  override_depth=1
+  307ED7:Vokrii - Minimalistic Perks of Skyrim.esp  runtime=65307ED7  type=Perk  editorid=VKR_Ill_070_MasterOfTheMind2_Perk  winner=Vokrii - Minimalistic Perks of Skyrim.esp  override_depth=1
+  307EDA:Vokrii - Minimalistic Perks of Skyrim.esp  runtime=65307EDA  type=Perk  editorid=VKR_Ill_070_ParalyzingFear_Perk  winner=Vokrii - Minimalistic Perks of Skyrim.esp  override_depth=1
+  307EDB:Vokrii - Minimalistic Perks of Skyrim.esp  runtime=65307EDB  type=Perk  editorid=VKR_Ill_060_LambToTheSlaughter_Perk  winner=Mysticism - Vokrii Compatibility Patch.esp  override_depth=2
+  307EE0:Vokrii - Minimalistic Perks of Skyrim.esp  runtime=65307EE0  type=Perk  editorid=VKR_Ill_080_Enrage_Perk  winner=Mysticism - Vokrii Compatibility Patch.esp  override_depth=2
+  307EF2:Vokrii - Minimalistic Perks of Skyrim.esp  runtime=65307EF2  type=Perk  editorid=VKR_Ill_060_Splendor_Perk  winner=Mysticism - Vokrii Compatibility Patch.esp  override_depth=2
+  30CFF4:Vokrii - Minimalistic Perks of Skyrim.esp  runtime=6530CFF4  type=Perk  editorid=VKR_Ill_090_SpiritOfWar_Perk  winner=Mysticism - Vokrii Compatibility Patch.esp  override_depth=2
+  3120F8:Vokrii - Minimalistic Perks of Skyrim.esp  runtime=653120F8  type=Perk  editorid=VKR_Alc_040_ConcentratedPoison2_Perk  winner=Vokrii - Minimalistic Perks of Skyrim.esp  override_depth=1
+  3120F9:Vokrii - Minimalistic Perks of Skyrim.esp  runtime=653120F9  type=Perk  editorid=VKR_Alc_040_ConcentratedPoison3_Perk  winner=Vokrii - Minimalistic Perks of Skyrim.esp  override_depth=1
+  3120FA:Vokrii - Minimalistic Perks of Skyrim.esp  runtime=653120FA  type=Perk  editorid=VKR_Alc_090_Gourmet_Perk  winner=Vokrii - Minimalistic Perks of Skyrim.esp  override_depth=1
+  317213:Vokrii - Minimalistic Perks of Skyrim.esp  runtime=65317213  type=Perk  editorid=VKR_Con_090_Necromaster_Perk  winner=Mysticism - Vokrii Compatibility Patch.esp  override_depth=2
+  31721F:Vokrii - Minimalistic Perks of Skyrim.esp  runtime=6531721F  type=Perk  editorid=VKR_Con_090_ElementalConflux_Perk  winner=Vokrii - Minimalistic Perks of Skyrim.esp  override_depth=1
+  321425:Vokrii - Minimalistic Perks of Skyrim.esp  runtime=65321425  type=Perk  editorid=VKR_Alc_060_SlowMetabolism2_Perk  winner=Vokrii - Minimalistic Perks of Skyrim.esp  override_depth=1
+  321429:Vokrii - Minimalistic Perks of Skyrim.esp  runtime=65321429  type=Perk  editorid=VKR_Alc_080_Adrenaline_Perk  winner=Vokrii - Minimalistic Perks of Skyrim.esp  override_depth=1
+  32142A:Vokrii - Minimalistic Perks of Skyrim.esp  runtime=6532142A  type=Perk  editorid=VKR_Alt_030_Battlemage2_Perk  winner=Vokrii - Minimalistic Perks of Skyrim.esp  override_depth=1
+  32142C:Vokrii - Minimalistic Perks of Skyrim.esp  runtime=6532142C  type=Perk  editorid=VKR_Alt_030_Battlemage1_Perk  winner=Vokrii - Apply Spell Conditions Fix.esp  override_depth=2
+  321436:Vokrii - Minimalistic Perks of Skyrim.esp  runtime=65321436  type=Perk  editorid=VKR_Alt_100_Ritualist_Perk_CreditHaddeqi  winner=Vokrii - Minimalistic Perks of Skyrim.esp  override_depth=1
+  32B649:Vokrii - Minimalistic Perks of Skyrim.esp  runtime=6532B649  type=Perk  editorid=VKR_Des_040_RuneMaster2_Perk_WasRuneMaster  winner=Vokrii - Minimalistic Perks of Skyrim.esp  override_depth=1
+  32B658:Vokrii - Minimalistic Perks of Skyrim.esp  runtime=6532B658  type=Perk  editorid=VKR_Enc_020_PowerStone3_Perk  winner=Vokrii - Thaumaturgy Compatibility Patch.esp  override_depth=2
+  330768:Vokrii - Minimalistic Perks of Skyrim.esp  runtime=65330768  type=Perk  editorid=VKR_Enc_old_ChargeTap_Perk  winner=Vokrii - Minimalistic Perks of Skyrim.esp  override_depth=1
+  33076B:Vokrii - Minimalistic Perks of Skyrim.esp  runtime=6533076B  type=Perk  editorid=VKR_Enc_050_ManaStone_Perk  winner=Vokrii - Minimalistic Perks of Skyrim.esp  override_depth=1
+  335871:Vokrii - Minimalistic Perks of Skyrim.esp  runtime=65335871  type=Perk  editorid=VKR_Lia_080_ToughHide_Perk  winner=Vokrii - Minimalistic Perks of Skyrim.esp  override_depth=1
+  33A982:Vokrii - Minimalistic Perks of Skyrim.esp  runtime=6533A982  type=Perk  editorid=VKR_Pic_080_ConspicuousWealth_Perk  winner=Vokrii - Minimalistic Perks of Skyrim.esp  override_depth=1
+  33A988:Vokrii - Minimalistic Perks of Skyrim.esp  runtime=6533A988  type=Perk  editorid=VKR_Spe_040_WordsOfPower2_Perk  winner=Vokrii - Minimalistic Perks of Skyrim.esp  override_depth=1
+  33A989:Vokrii - Minimalistic Perks of Skyrim.esp  runtime=6533A989  type=Perk  editorid=VKR_Spe_040_WordsOfPower3_Perk  winner=Vokrii - Minimalistic Perks of Skyrim.esp  override_depth=1
+  344BC8:Vokrii - Minimalistic Perks of Skyrim.esp  runtime=65344BC8  type=Perk  editorid=VKR_One_old_SweepAttack_Perk  winner=Vokrii - Minimalistic Perks of Skyrim.esp  override_depth=1
+  344BC9:Vokrii - Minimalistic Perks of Skyrim.esp  runtime=65344BC9  type=Perk  editorid=VKR_One_080_Bladedancer_Perk  winner=Vokrii - Minimalistic Perks of Skyrim.esp  override_depth=1
+  344BCB:Vokrii - Minimalistic Perks of Skyrim.esp  runtime=65344BCB  type=Perk  editorid=VKR_One_old_VictoryRush_Perk  winner=Vokrii - Minimalistic Perks of Skyrim.esp  override_depth=1
+  344BCE:Vokrii - Minimalistic Perks of Skyrim.esp  runtime=65344BCE  type=Perk  editorid=VKR_Two_100_CrowdPleaser_Perk  winner=Vokrii - Minimalistic Perks of Skyrim.esp  override_depth=1
+  353F1B:Vokrii - Minimalistic Perks of Skyrim.esp  runtime=65353F1B  type=Perk  editorid=VKR_One_070_AdvancedDagger_Perk  winner=Vokrii - Apply Spell Conditions Fix.esp  override_depth=2
+  35902A:Vokrii - Minimalistic Perks of Skyrim.esp  runtime=6535902A  type=Perk  editorid=VKR_Two_RollingCharge_Perk_ProcOnSelf  winner=Vokrii - Minimalistic Perks of Skyrim.esp  override_depth=1
+  35E12F:Vokrii - Minimalistic Perks of Skyrim.esp  runtime=6535E12F  type=Perk  editorid=VKR_Res_040_VigilantWard2_Perk  winner=Vokrii - Minimalistic Perks of Skyrim.esp  override_depth=1
+  35E130:Vokrii - Minimalistic Perks of Skyrim.esp  runtime=6535E130  type=Perk  editorid=VKR_Res_060_SunsJudgment2_Perk  winner=Vokrii - Minimalistic Perks of Skyrim.esp  override_depth=1
+  36833B:Vokrii - Minimalistic Perks of Skyrim.esp  runtime=6536833B  type=Perk  editorid=VKR_Con_050_OblivionStone1_Perk  winner=Vokrii - Minimalistic Perks of Skyrim.esp  override_depth=1
+  36D44A:Vokrii - Minimalistic Perks of Skyrim.esp  runtime=6536D44A  type=Perk  editorid=VKR_Con_old_OblivionStone_Perk  winner=Vokrii - Minimalistic Perks of Skyrim.esp  override_depth=1
+  37254D:Vokrii - Minimalistic Perks of Skyrim.esp  runtime=6537254D  type=Perk  editorid=VKR_Con_old_RitualSummoning_Perk  winner=Vokrii - Minimalistic Perks of Skyrim.esp  override_depth=1
+  372556:Vokrii - Minimalistic Perks of Skyrim.esp  runtime=65372556  type=Perk  editorid=VKR_Con_050_OblivionStone2_Perk  winner=Vokrii - Minimalistic Perks of Skyrim.esp  override_depth=1
+  377658:Vokrii - Minimalistic Perks of Skyrim.esp  runtime=65377658  type=Perk  editorid=VKR_Alt_040_SorcerersRobes_Perk  winner=Vokrii - Minimalistic Perks of Skyrim.esp  override_depth=1
+  395C65:Vokrii - Minimalistic Perks of Skyrim.esp  runtime=65395C65  type=Perk  editorid=VKR_Alt_050_OcatosPreparation_Perk  winner=Vokrii - Minimalistic Perks of Skyrim.esp  override_depth=1
+  395C75:Vokrii - Minimalistic Perks of Skyrim.esp  runtime=65395C75  type=Perk  editorid=VKR_Alt_090_ParalyzingEscape_Perk  winner=Vokrii - Minimalistic Perks of Skyrim.esp  override_depth=1
+  39AD7B:Vokrii - Minimalistic Perks of Skyrim.esp  runtime=6539AD7B  type=Perk  editorid=VKR_Alt_old_Ritualist_Perk  winner=Vokrii - Minimalistic Perks of Skyrim.esp  override_depth=1
+  39FE7F:Vokrii - Minimalistic Perks of Skyrim.esp  runtime=6539FE7F  type=Perk  editorid=VKR_Alt_old_SubjugationField_Perk  winner=Vokrii - Minimalistic Perks of Skyrim.esp  override_depth=1
+  3B4293:Vokrii - Minimalistic Perks of Skyrim.esp  runtime=653B4293  type=Perk  editorid=VKR_Ill_020_Animage3_Perk  winner=Mysticism - Vokrii Compatibility Patch.esp  override_depth=2
+  3B9399:Vokrii - Minimalistic Perks of Skyrim.esp  runtime=653B9399  type=Perk  editorid=VKR_Res_old_PerfectForm_Perk  winner=Vokrii - Minimalistic Perks of Skyrim.esp  override_depth=1
+  3DCABA:Vokrii - Minimalistic Perks of Skyrim.esp  runtime=653DCABA  type=Perk  editorid=VKR_Con_060_DarkPower2_Perk  winner=Mysticism - Vokrii Compatibility Patch.esp  override_depth=2
+  3EBDC2:Vokrii - Minimalistic Perks of Skyrim.esp  runtime=653EBDC2  type=Perk  editorid=VKR_Enc_070_DefensiveRunes_Perk  winner=Vokrii - Minimalistic Perks of Skyrim.esp  override_depth=1
+  447041:Vokrii - Minimalistic Perks of Skyrim.esp  runtime=65447041  type=Perk  editorid=VKR_Bck_old_Ironclad_Perk  winner=Vokrii - Minimalistic Perks of Skyrim.esp  override_depth=1
+  45B455:Vokrii - Minimalistic Perks of Skyrim.esp  runtime=6545B455  type=Perk  editorid=VKR_Smh_090_HiddenEnchantments_Perk  winner=Vokrii - Minimalistic Perks of Skyrim.esp  override_depth=1
+  474978:Vokrii - Minimalistic Perks of Skyrim.esp  runtime=65474978  type=Perk  editorid=VKR_Lia_old_EvasiveLeap_Perk  winner=Vokrii - Minimalistic Perks of Skyrim.esp  override_depth=1
+  48DE86:Vokrii - Minimalistic Perks of Skyrim.esp  runtime=6548DE86  type=Perk  editorid=VKR_Alc_old_Druid_Perk  winner=Vokrii - Minimalistic Perks of Skyrim.esp  override_depth=1
+  498089:Vokrii - Minimalistic Perks of Skyrim.esp  runtime=65498089  type=Perk  editorid=VKR_Spe_old_Tongue_Perk  winner=Vokrii - Minimalistic Perks of Skyrim.esp  override_depth=1
+  4B1599:Vokrii - Minimalistic Perks of Skyrim.esp  runtime=654B1599  type=Perk  editorid=VKR_Pic_060_LawlessTimes2_Perk  winner=Vokrii - Minimalistic Perks of Skyrim.esp  override_depth=1
+  4F3346:Vokrii - Minimalistic Perks of Skyrim.esp  runtime=654F3346  type=Perk  editorid=VKR_Two_060_Warmaster_Perk  winner=Vokrii - ADXP Patch.esp  override_depth=2
+  4F335F:Vokrii - Minimalistic Perks of Skyrim.esp  runtime=654F335F  type=Perk  editorid=VKR_One_060_CraterMaker_Perk  winner=Vokrii - ADXP Patch.esp  override_depth=2
+  4F3360:Vokrii - Minimalistic Perks of Skyrim.esp  runtime=654F3360  type=Perk  editorid=VKR_One_090_DisarmingSlash_Perk  winner=Vokrii - ADXP Patch.esp  override_depth=2
+  0153CD:Skyrim.esm  runtime=000153CD  type=Perk  editorid=VKR_Alt_020_AlterationDualCasting_Perk_WasAlterationDualCasting  winner=Vokrii - Minimalistic Perks of Skyrim.esp  override_depth=2
+  0153CE:Skyrim.esm  runtime=000153CE  type=Perk  editorid=VKR_Con_020_ConjurationDualCasting_Perk_WasConjurationDualCasting  winner=Vokrii - Minimalistic Perks of Skyrim.esp  override_depth=2
+  0153CF:Skyrim.esm  runtime=000153CF  type=Perk  editorid=VKR_Des_020_DestructionDualCasting_Perk_WasDestructionDualCasting  winner=Vokrii - Minimalistic Perks of Skyrim.esp  override_depth=2
+  0153D0:Skyrim.esm  runtime=000153D0  type=Perk  editorid=VKR_Ill_020_IllusionDualCasting_Perk_WasIllusionDualCasting  winner=Vokrii - Minimalistic Perks of Skyrim.esp  override_depth=2
+  0153D1:Skyrim.esm  runtime=000153D1  type=Perk  editorid=VKR_Res_020_RestorationDualCasting_Perk_WasRestorationDualCasting  winner=Vokrii - Minimalistic Perks of Skyrim.esp  override_depth=2
+  0153D2:Skyrim.esm  runtime=000153D2  type=Perk  editorid=VKR_Des_060_Impact_Perk_WasImpact  winner=Vokrii - Minimalistic Perks of Skyrim.esp  override_depth=2
+  018E6A:Skyrim.esm  runtime=00018E6A  type=Perk  editorid=VKR_Pic_old_PickpocketMastery2_Perk_WasLightFingers2  winner=Vokrii - Minimalistic Perks of Skyrim.esp  override_depth=3
+  018E6B:Skyrim.esm  runtime=00018E6B  type=Perk  editorid=VKR_Pic_old_PickpocketMastery3_Perk_WasLightFingers3  winner=Vokrii - Minimalistic Perks of Skyrim.esp  override_depth=3
+  018E6C:Skyrim.esm  runtime=00018E6C  type=Perk  editorid=VKR_Pic_old_PickpocketMastery4_Perk_WasLightFingers4  winner=Vokrii - Minimalistic Perks of Skyrim.esp  override_depth=3
+  018E6D:Skyrim.esm  runtime=00018E6D  type=Perk  editorid=VKR_Pic_old_PickpocketMastery5_Perk_WasLightFingers5  winner=Vokrii - Minimalistic Perks of Skyrim.esp  override_depth=4
+  03AF81:Skyrim.esm  runtime=0003AF81  type=Perk  editorid=VKR_One_040_FuriousStrength_Perk_WasSavageStrike  winner=Vokrii - Minimalistic Perks of Skyrim.esp  override_depth=2
+  03AF83:Skyrim.esm  runtime=0003AF83  type=Perk  editorid=VKR_Two_030_BasicGreatsword1_Perk_WasBladesman1  winner=Vokrii - Apply Spell Conditions Fix.esp  override_depth=5
+  03AF84:Skyrim.esm  runtime=0003AF84  type=Perk  editorid=VKR_Two_030_BasicWarhammer1_Perk_WasSkullcrusher1  winner=Vokrii - Apply Spell Conditions Fix.esp  override_depth=4
+  03AF9E:Skyrim.esm  runtime=0003AF9E  type=Perk  editorid=VKR_Two_090_Sweep_Perk_WasSweep  winner=Vokrii - ADXP Patch.esp  override_depth=3
+  03AFA6:Skyrim.esm  runtime=0003AFA6  type=Perk  editorid=VKR_One_100_VictoryRush_Perk_WasParalyzingStrike  winner=Vokrii - Minimalistic Perks of Skyrim.esp  override_depth=2
+  03AFA7:Skyrim.esm  runtime=0003AFA7  type=Perk  editorid=VKR_Two_060_Berserker_Perk_WasWarmaster  winner=Vokrii - Minimalistic Perks of Skyrim.esp  override_depth=5
+  03FFFA:Skyrim.esm  runtime=0003FFFA  type=Perk  editorid=VKR_One_030_BasicWarAxe1_Perk_WasHackAndSlash1  winner=Vokrii - Apply Spell Conditions Fix.esp  override_depth=7
+... [truncated: rendered 383 of 426 returned matches before hitting max_chars=70000; lower limit= or raise max_chars]
+
+spilled: complete result (426 rows) -> C:\Users\Administrator\AppData\Local\houseCARL\server\results\records_20260922-005418_e2-4f495a82189ded97.jsonl
+  the inline render hit max_chars, so the COMPLETE result was auto-spilled (nothing is lost; the rows above are a prefix).
+  manifest: rows=426  identity=formid  epoch=e2-4f495a82189ded97
+  row_schema: formid, runtime_formid, type, editorid, winner, override_depth, matches?
+  sort: load-order scan order (deterministic within one epoch)
+  type_counts: Perk=426
+  the file is JSONL (line 1 = this manifest, one row per line) — grep/read it with your own file tools, or re-enter it server-side via formids=@C:\Users\Administrator\AppData\Local\houseCARL\server\results\records_20260922-005418_e2-4f495a82189ded97.jsonl / where=["formid in @C:\Users\Administrator\AppData\Local\houseCARL\server\results\records_20260922-005418_e2-4f495a82189ded97.jsonl"] (epoch-checked against the current build).

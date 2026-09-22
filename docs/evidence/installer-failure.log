@@ -1,0 +1,13 @@
+[9/21/2026, 21:56:44] === Logging started: 2026/09/21 21:56:44 ===
+[9/21/2026, 21:56:44] Executable: C:\Users\Administrator\Documents\Codex\2026-09-21\files-pasted-by-the-user-quero\work\toolchain\vs_buildtools.exe v17.14.37710.0
+[9/21/2026, 21:56:44] --- logging level: standard ---
+[9/21/2026, 21:56:44] Directory 'C:\Users\ADMINI~1\AppData\Local\Temp\023c98f654578e7c47c10f\' has been selected for file extraction
+[9/21/2026, 21:56:44] Extracting files to: C:\Users\ADMINI~1\AppData\Local\Temp\023c98f654578e7c47c10f\
+[9/21/2026, 21:56:45] Extraction took 391 milliseconds
+[9/21/2026, 21:56:45] Executing extracted package: 'vs_bootstrapper_d15\vs_setup_bootstrapper.exe ' with commandline ' --quiet --wait --norestart --nocache --installPath "C:\Program Files (x86)\Microsoft Visual Studio\2022\BuildTools" --add Microsoft.VisualStudio.Workload.VCTools --includeRecommended --env "_SFX_CAB_EXE_PACKAGE:C:\Users\Administrator\Documents\Codex\2026-09-21\files-pasted-by-the-user-quero\work\toolchain\vs_buildtools.exe _SFX_CAB_EXE_ORIGINALWORKINGDIR:C:\Users\Administrator\Documents\Codex\2026-09-21\files-pasted-by-the-user-quero"'
+[9/21/2026, 21:56:45] User may have declined UAC prompt
+[9/21/2026, 21:56:45] Error 0x80070642: Failed to start the process
+[9/21/2026, 21:56:45] Error 0x80070642: Failed to execute file
+[9/21/2026, 21:56:45] The entire Box execution exiting with result code: 0x80070642
+[9/21/2026, 21:56:45] Launched extracted application exiting with result code: 0x0
+[9/21/2026, 21:56:45] === Logging stopped: 2026/09/21 21:56:45 ===

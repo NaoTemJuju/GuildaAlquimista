@@ -1,0 +1,167 @@
+{
+  "patch": "GuildAlchemy",
+  "records": [
+    {
+      "record_type": "Perk",
+      "editorid": "GuildAlchemy_Novice",
+      "ops": [
+        {
+          "field_path": "Name",
+          "value": "Guilda dos Alquimistas - Novato"
+        },
+        {
+          "field_path": "Description",
+          "value": "Patente controladora do Guild Alchemy."
+        },
+        {
+          "field_path": "Hidden",
+          "value": "true"
+        },
+        {
+          "field_path": "Playable",
+          "value": "false"
+        },
+        {
+          "field_path": "NumRanks",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "record_type": "Perk",
+      "editorid": "GuildAlchemy_Apprentice",
+      "ops": [
+        {
+          "field_path": "Name",
+          "value": "Guilda dos Alquimistas - Aprendiz"
+        },
+        {
+          "field_path": "Description",
+          "value": "Patente controladora do Guild Alchemy."
+        },
+        {
+          "field_path": "Hidden",
+          "value": "true"
+        },
+        {
+          "field_path": "Playable",
+          "value": "false"
+        },
+        {
+          "field_path": "NumRanks",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "record_type": "Perk",
+      "editorid": "GuildAlchemy_Adept",
+      "ops": [
+        {
+          "field_path": "Name",
+          "value": "Guilda dos Alquimistas - Adepto"
+        },
+        {
+          "field_path": "Description",
+          "value": "Patente controladora do Guild Alchemy."
+        },
+        {
+          "field_path": "Hidden",
+          "value": "true"
+        },
+        {
+          "field_path": "Playable",
+          "value": "false"
+        },
+        {
+          "field_path": "NumRanks",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "record_type": "Perk",
+      "editorid": "GuildAlchemy_Specialist",
+      "ops": [
+        {
+          "field_path": "Name",
+          "value": "Guilda dos Alquimistas - Especialista"
+        },
+        {
+          "field_path": "Description",
+          "value": "Patente controladora do Guild Alchemy."
+        },
+        {
+          "field_path": "Hidden",
+          "value": "true"
+        },
+        {
+          "field_path": "Playable",
+          "value": "false"
+        },
+        {
+          "field_path": "NumRanks",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "record_type": "Perk",
+      "editorid": "GuildAlchemy_Master",
+      "ops": [
+        {
+          "field_path": "Name",
+          "value": "Guilda dos Alquimistas - Mestre"
+        },
+        {
+          "field_path": "Description",
+          "value": "Patente controladora do Guild Alchemy."
+        },
+        {
+          "field_path": "Hidden",
+          "value": "true"
+        },
+        {
+          "field_path": "Playable",
+          "value": "false"
+        },
+        {
+          "field_path": "NumRanks",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "record_type": "Activator",
+      "editorid": "GuildAlchemy_Workbench",
+      "ops": [
+        {
+          "field_path": "Name",
+          "value": "Bancada de Alquimia da Guilda"
+        },
+        {
+          "field_path": "ActivateTextOverride",
+          "value": "Preparar"
+        },
+        {
+          "field_path": "Model",
+          "compose": {
+            "type": "Model",
+            "fields": {
+              "File": "Furniture\\AlchemyWorkbench.nif"
+            }
+          }
+        },
+        {
+          "field_path": "ObjectBounds.First",
+          "value": "-60,-10,-34"
+        },
+        {
+          "field_path": "ObjectBounds.Second",
+          "value": "60,123,112"
+        }
+      ]
+    }
+  ],
+  "readback": true
+}

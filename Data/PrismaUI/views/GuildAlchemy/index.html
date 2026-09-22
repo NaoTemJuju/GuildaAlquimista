@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'none'">
+  <title>Bancada de Alquimia da Guilda</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="app.js" defer></script>
+</head>
+<body>
+<main class="workbench">
+  <header>
+    <div><p class="eyebrow">GUILDA DOS ALQUIMISTAS</p><h1>O ofício da transformação</h1><p class="subtitle">Escolha a matéria. Revele suas virtudes. Refine o resultado.</p></div>
+    <div class="character"><span id="rank">Sem patente</span><span id="skill">Alquimia —</span></div>
+    <button id="close" class="quiet" aria-label="Fechar bancada">Fechar <kbd>Esc</kbd></button>
+  </header>
+  <div id="notice" role="status" aria-live="polite">Aguardando conexão com Guild Alchemy.</div>
+  <div class="columns">
+    <section class="panel inventory"><div class="section-title"><h2>01 <span>Matéria</span></h2><span id="selection-count">0 / 3</span></div><label for="search" class="sr-only">Buscar ingrediente</label><input id="search" type="search" placeholder="Buscar no inventário…" autocomplete="off"><p class="hint">Selecione dois ou três ingredientes diferentes.</p><div id="ingredients" class="scroll"><p class="empty">O inventário aparecerá ao abrir a bancada no jogo.</p></div></section>
+    <section class="panel resonance"><div class="section-title"><h2>02 <span>Ressonância</span></h2><span class="tag">PREPARAÇÃO</span></div><div id="recipe" class="recipe"><span>Nenhum ingrediente selecionado</span></div><div id="effects" class="scroll effects"><p class="empty">Prepare a combinação para examinar as virtudes em ressonância.</p></div><div class="quantity"><div><label for="quantity">Operações de produção</label><p class="hint">Ingredientes são consumidos por operação.</p></div><div class="stepper"><button id="minus" aria-label="Diminuir quantidade">−</button><input id="quantity" type="number" min="1" max="100" value="1" aria-label="Quantidade de operações"><button id="plus" aria-label="Aumentar quantidade">+</button><button id="maximum">Máx.</button></div></div><div class="yield"><span>Produção prevista</span><strong id="yield">—</strong></div><p id="double-toil" class="hint"></p></section>
+    <section class="panel processes"><div class="section-title"><h2>03 <span>Ofício</span></h2></div><button id="prepare" class="process"><span class="process-number">I</span><span><strong>Preparar</strong><small id="prepare-reason">Requer patente Novato</small></span></button><button id="purify" class="process"><span class="process-number">II</span><span><strong>Purificar</strong><small id="purify-reason">Requer patente Adepto</small></span></button><div id="purify-options" class="options" hidden><label for="remove-effect">Qual virtude deseja remover?</label><select id="remove-effect"></select></div><button id="concentrate" class="process"><span class="process-number">III</span><span><strong>Concentrar</strong><small id="concentrate-reason">Requer patente Especialista</small></span></button><div id="concentrate-options" class="options" hidden><label for="target-effect">Virtude a concentrar</label><select id="target-effect"></select><label for="reagent">Reagente adicional</label><select id="reagent"></select><p class="hint">Uma unidade extra por operação. Não gera novas virtudes.</p></div><div class="cost"><h3>Matéria necessária</h3><div id="costs">Prepare uma receita.</div></div><button id="finalize" class="primary">Finalizar produção</button><p class="hint safety">A matéria só é consumida ao finalizar. Fechar a bancada descarta a preparação.</p></section>
+  </div>
+  <details id="debug" hidden><summary>Diagnóstico</summary><pre id="debug-data"></pre></details>
+  <footer><span>BANCADA DE ALQUIMIA DA GUILDA</span><span>Preparar · Purificar · Concentrar</span></footer>
+</main>
+</body>
+</html>
