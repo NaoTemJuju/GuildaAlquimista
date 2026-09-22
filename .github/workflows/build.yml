@@ -1,0 +1,79 @@
+name: Build GuildAlchemy
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [ main ]
+    paths:
+      - "src/**"
+      - "tests/**"
+      - "third_party/**"
+      - "Data/**"
+      - "CMakeLists.txt"
+      - ".github/workflows/build.yml"
+
+jobs:
+  build:
+    runs-on: windows-latest
+
+    steps:
+      - name: Baixar o projeto
+        uses: actions/checkout@v4
+
+      - name: Preparar MSVC
+        uses: ilammy/msvc-dev-cmd@v1
+        with:
+          arch: x64
+
+      - name: Preparar Ninja
+        uses: seanmiddleditch/gha-setup-ninja@master
+
+      - name: Clonar vcpkg
+        shell: pwsh
+        run: |
+          git clone https://github.com/microsoft/vcpkg.git C:/deps/vcpkg
+          C:/deps/vcpkg/bootstrap-vcpkg.bat -disableMetrics
+
+      - name: Instalar dependencias
+        shell: pwsh
+        run: |
+          C:/deps/vcpkg/vcpkg.exe install spdlog directxtk directxmath rapidcsv nlohmann-json --triplet x64-windows-static-md
+
+      - name: Clonar CommonLibSSE-NG
+        shell: pwsh
+        run: |
+          git clone --depth 1 --branch ng https://github.com/alandtse/CommonLibVR.git C:/deps/CommonLibSSE-NG
+
+      - name: Configurar CMake
+        shell: pwsh
+        run: |
+          cmake -S . -B build -G Ninja `
+            -DCMAKE_BUILD_TYPE=Release `
+            -DCOMMONLIB_PATH=C:/deps/CommonLibSSE-NG `
+            -DCMAKE_TOOLCHAIN_FILE=C:/deps/vcpkg/scripts/buildsystems/vcpkg.cmake `
+            -DVCPKG_TARGET_TRIPLET=x64-windows-static-md `
+            -DGUILDALCHEMY_BUILD_TESTS=ON
+
+      - name: Compilar
+        shell: pwsh
+        run: cmake --build build --parallel
+
+      - name: Rodar testes
+        shell: pwsh
+        run: ctest --test-dir build --output-on-failure -C Release
+
+      - name: Montar pacote
+        shell: pwsh
+        run: |
+          cmake --install build --prefix package --config Release
+          if (!(Test-Path "package/SKSE/Plugins/GuildAlchemy.dll")) {
+            throw "GuildAlchemy.dll nao foi encontrada no pacote final."
+          }
+
+      - name: Publicar pacote pronto
+        uses: actions/upload-artifact@v4
+        with:
+          name: GuildAlchemy-Windows-x64
+          path: package/**
+          if-no-files-found: error
+          retention-days: 30
