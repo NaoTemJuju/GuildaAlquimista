@@ -1,10 +1,38 @@
-# Relatório técnico — Guild Alchemy MVP 0.1.2
+# Relatório técnico — Guild Alchemy MVP 0.1.4
+
+## Correções e fluxo 0.1.4
+
+`AddPoison` usa um smart pointer diferente de `AddPotion`. A validação antiga exigia simultaneamente o ponteiro retornado e o ponteiro de saída, embora o runtime possa preencher apenas uma dessas vias. A versão 0.1.4 aceita a forma válida fornecida pelo runtime, valida seu registro e transfere a referência persistente também para venenos. A transação continua adicionando e confirmando o produto antes de remover qualquer ingrediente, com rollback nas falhas posteriores.
+
+A view agora recebe foco com `pauseGame=false`, possui captura JavaScript e nativa da tecla Escape, busca por nomes de efeitos conhecidos e uma produção visual cancelável. O tempo soma 10 segundos para a primeira operação, reduz 0,5 por unidade até o piso de 5, mais 8 segundos para Purificação e 12 para Concentração. O som vanilla `UIAlchemyCreatePotion` ou `UIAlchemyCreatePoison` toca somente depois do commit.
+
+O teste provisório de patente limita Novato aos MGEFs `MAG_AlchRestoreHealth` e `MAG_AlchParalysis`; o C++ repete a validação da receita. Patentes superiores não recebem essa restrição.
+
+## Correção 0.1.3 — escala do Apothecary
+
+O teste ingame confirmou `player.hasperk 4F0CB06C = 1`, 30/s na bancada vanilla e 18/s na GuildAlchemy para Wheat + Blue Mountain Flower. O causador é o perk oculto `MAG_ControllerScalingPerk` (`0CB06C:Apothecary.esp`): Restore Health/Magicka/Stamina recebe `1 + Alchemy × 0.00667`, que em Alchemy 100 multiplica 18 por aproximadamente 1.667 e produz 30 após o arredondamento.
+
+A versão 0.1.3 resolve esse perk e suas quatro regras diretamente do JSON. Cada regra só entra quando o jogador realmente possui o controlador e o MGEF carrega uma das keywords correspondentes. Isso cobre os grupos Fortify (`0.015 × Alchemy`), Restore (`0.00667 × Alchemy`), Illusion (`×0.8`) e Damage Health/Magicka/Stamina (`0.0052 × Alchemy`). O log debug registra regra, coeficiente, skill, fator e acumulado por efeito. Os multiplicadores Vokrii continuam separados e entram uma única vez.
 
 ## Correção 0.1.2
 
 `GA::Craft()` agora trata a finalização como uma transação verificável. O `AlchemyItem` retornado por `AddPotion` ou `AddPoison` precisa ser não nulo, dinâmico, do tipo correto e estar registrado no mapa correspondente do `BGSCreatedObjectManager`. O log registra tipo, ponteiro, FormID, registro e referência do objeto criado.
 
 O produto é nomeado, adicionado ao jogador e confirmado por diferença de `PlayerCharacter::GetItemCount()` antes de qualquer ingrediente ser removido. Cada remoção também é confirmada pela contagem. Falha de criação ou adição preserva todos os ingredientes; falha posterior de consumo restaura os ingredientes já removidos e retira o produto. Como `Craft()` lança nesses casos, a UI recebe `error` e nunca `crafted`.
+
+## Correção de persistência após a adição
+
+O teste de inventário logo após `AddObjectToContainer` confirmava o item, mas não cobria a liberação do `CreatedObjPtr` ao sair de `Craft()`. Em Skyrim, uma forma alquímica dinâmica também precisa manter uma referência no `BGSCreatedObjectManager`. A versão atual compara a contagem do manager antes e depois da adição: se o caminho direto não adquiriu a referência, transfere uma referência persistente ao item do inventário; se o jogo já a adquiriu, não duplica a contagem. O log passa a registrar `Referência persistente transferida ao inventário` ou `Inventário adquiriu referência do produto`.
+
+## Mod de garrafas no perfil ativo
+
+O perfil ativo contém `Alchemy Requires Bottles Redux.esp`, `Alchemy Requires Bottles - Empty Bottle Patch.esp`, `Craftable Empty Alchemy Bottles.esp`, `ARBR Empty Potion Limiter.esp` e `DEG_DontEatGlass.esp`. O `Activator` `GuildAlchemy_Workbench` não possui `WICraftingAlchemy`; portanto o caminho normal de `OnSit` do Redux não reconhece essa bancada. O script Redux remove apenas `_p7ARBR_EmptyBottle` quando o contador vanilla de poções/venenos aumenta; o limitador só trata garrafas vazias.
+
+O script de vasos `Vessels_ConsumptionScript` tem um caminho separado que, no estado `Crafting`, remove o próprio item recebido quando `PotionVessel.HasForm(item)` é verdadeiro e não há garrafa (`Vessels_PotionFail`). Ele pode explicar o sintoma se a sessão tiver sido colocada nesse estado por uma mesa vanilla e o produto estiver na lista filtrada, mas não há evidência no log atual de que esse evento tenha ocorrido. A persistência do `CreatedObjPtr` era a falha nativa que o código ainda não verificava após a adição.
+
+## Magnitude observada
+
+O vencedor de Wheat e Blue Mountain Flower é `Apothecary.esp`; ambos têm Restore Health com magnitude de ingrediente `0.96`. O perk real do Vokrii (`0BE127:Skyrim.esm`) é uma entrada `ModAlchemyEffectiveness`, `MultiplyOnePlusAVMult`, com valor `0.01`, descrita como 1% por nível de Alchemy. A DLL reproduz essa entrada com o multiplicador de Alchemy Mastery. A diferença restante de 18 para 30 foi localizada no controlador oculto do Apothecary e corrigida na 0.1.3.
 
 ## Correção 0.1.1
 
@@ -29,7 +57,7 @@ Perks Vokrii resolvidos: Alchemy Mastery `0BE127`, Physician `058215`, Benefacto
 
 ## Decisões conservadoras
 
-O pipeline não chama um probe genérico de `ModAlchemyEffectiveness`, pois entry points podem usar formatos que não se reduzem com segurança a um `float*`. Para o setup solicitado, a base usa GMSTs e ActorValues nativos; a integração Vokrii reproduz as entradas reais lidas pelo houseCARL e suas keywords.
+O pipeline não chama um probe genérico de `ModAlchemyEffectiveness`, pois entry points podem usar formatos que não se reduzem com segurança a um `float*`. Para o setup solicitado, a base usa GMSTs e ActorValues nativos; as integrações Vokrii e Apothecary reproduzem as entradas reais lidas pelo houseCARL e suas keywords.
 
 Concentração só é permitida quando o MGEF declara exatamente um eixo de potência utilizável. Casos ambíguos falham sem consumo. Preparação é memória de sessão e não cria itens intermediários.
 

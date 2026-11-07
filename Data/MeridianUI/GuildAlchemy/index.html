@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#08140f">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'none'">
+  <title>Guilda dos Alquimistas — prévia visual</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <div class="world" aria-hidden="true"></div>
+  <button id="reopen" class="reopen" hidden>Abrir bancada de alquimia</button>
+  <main id="workbench" class="workbench">
+    <header class="topbar">
+      <div class="brand">
+        <div class="brand-mark" aria-hidden="true">✧</div>
+        <div>
+          <div class="eyebrow">AETHERIUS <span>•</span> GUILDA DOS ALQUIMISTAS</div>
+          <h1>O ofício da transformação</h1>
+          <p>Escolha a matéria. Revele suas virtudes. Refine o resultado.</p>
+        </div>
+      </div>
+      <div class="identity">
+        <div class="rank"><span class="rank-name">Mestre</span><span>Alquimia 100</span></div>
+        <button id="close" class="close">Fechar <kbd>Esc</kbd></button>
+      </div>
+    </header>
+
+    <div class="status-row">
+      <span class="status-dot" aria-hidden="true"></span>
+      <span id="status">Bancada pronta. Selecione dois ou três ingredientes.</span>
+    </div>
+
+    <div class="columns">
+      <section class="panel matter" aria-labelledby="matter-title">
+        <div class="panel-heading"><span class="panel-number">01</span><h2 id="matter-title">Matéria</h2><span id="selection-count" class="heading-detail">0 / 3</span></div>
+        <p class="panel-subtitle">Escolha os ingredientes para a sua mistura.</p>
+        <label class="search-wrap"><span aria-hidden="true">⌕</span><input id="search" type="search" placeholder="Buscar ingrediente ou efeito conhecido..." autocomplete="off" aria-label="Buscar ingrediente ou efeito conhecido"></label>
+        <div class="list-note"><span>Selecione dois ou três ingredientes diferentes</span><span id="ingredient-count"></span></div>
+        <div id="ingredient-list" class="ingredient-list" aria-label="Ingredientes disponíveis"></div>
+        <div class="matter-footer">
+          <div class="small-stats"><span>Efeitos conhecidos <strong id="known-count">0</strong></span><span>Garrafas vazias <strong id="bottle-count">0</strong></span></div>
+          <div class="lore-art" aria-hidden="true"><img class="alchemy-illustration" src="assets/alchemy-footer.svg" alt=""></div>
+          <blockquote>“Na natureza, tudo é matéria.<br>No conhecimento, tudo é possibilidade.”<cite>— Guilda dos Alquimistas</cite></blockquote>
+        </div>
+      </section>
+
+      <section class="panel resonance" aria-labelledby="resonance-title">
+        <div class="panel-heading"><span class="panel-number">02</span><h2 id="resonance-title">Ressonância</h2><span id="resonance-phase" class="heading-detail">PREPARAÇÃO</span></div>
+        <p class="panel-subtitle">Efeitos revelados na combinação selecionada.</p>
+        <div class="alchemy-orbit" aria-label="Ingredientes selecionados">
+          <div class="orbit-line orbit-line-a"></div><div class="orbit-line orbit-line-b"></div>
+          <div class="orbit-ring ring-outer"></div><div class="orbit-ring ring-mid"></div><div class="orbit-ring ring-inner"></div>
+          <div class="orbit-core"><img src="assets/icons/alchemy-star.svg" alt=""></div>
+          <button class="orbit-slot slot-one" data-slot="0" title="Primeiro ingrediente"><span><img src="assets/icons/herb.svg" alt=""></span><small>Primeiro ingrediente</small></button>
+          <button class="orbit-slot slot-two" data-slot="1" title="Segundo ingrediente"><span><img src="assets/icons/flask.svg" alt=""></span><small>Segundo ingrediente</small></button>
+          <button class="orbit-slot slot-three" data-slot="2" title="Terceiro ingrediente"><span><img src="assets/icons/mortar.svg" alt=""></span><small>Terceiro ingrediente</small></button>
+        </div>
+        <div id="effects" class="effects" aria-live="polite"><div class="empty-state">Selecione dois ingredientes para revelar suas virtudes em ressonância.</div></div>
+        <div id="predicted" class="predicted" hidden>
+          <div class="section-label">RESULTADO PREVISTO</div>
+          <div class="result-name" id="result-name"></div>
+          <div class="result-type" id="result-type"></div>
+        </div>
+        <div class="resonance-bottom">
+          <div class="quantity-line"><div><h3>Operações de produção</h3><p>Ingredientes consumidos por operação.</p></div><div class="stepper"><button id="qty-minus" aria-label="Diminuir operações">−</button><output id="quantity">1</output><button id="qty-plus" aria-label="Aumentar operações">+</button><button id="qty-max">Máx.</button></div></div>
+          <div class="yield-line"><span>Produção prevista</span><strong id="yield">—</strong></div>
+          <p id="yield-note" class="yield-note">Selecione uma combinação válida.</p>
+        </div>
+      </section>
+
+      <section class="panel craft" aria-labelledby="craft-title">
+        <div class="panel-heading"><span class="panel-number">03</span><h2 id="craft-title">Ofício</h2><span class="heading-detail">PROCESSO</span></div>
+        <p class="panel-subtitle">Aplique o processo alquímico à receita.</p>
+        <div class="processes" role="group" aria-label="Processo alquímico">
+          <button class="process active" data-process="prepare"><span class="process-icon"><img src="assets/icons/mortar.svg" alt=""></span><span><strong>Preparar</strong><small>Combine os ingredientes e revele o resultado.</small></span><span class="check">✓</span></button>
+          <button class="process" data-process="stabilize"><span class="process-icon"><img src="assets/icons/herb.svg" alt=""></span><span><strong>Estabilizar</strong><small>Reduza a virtude indesejada.</small></span><span class="check">✓</span></button>
+          <button class="process" data-process="purify"><span class="process-icon"><img src="assets/icons/drop.svg" alt=""></span><span><strong>Purificar</strong><small>Remova uma virtude secundária.</small></span><span class="check">✓</span></button>
+          <button class="process" data-process="concentrate"><span class="process-icon"><img src="assets/icons/flask.svg" alt=""></span><span><strong>Concentrar</strong><small>Fortaleça uma virtude com matéria extra.</small></span><span class="check">✓</span></button>
+        </div>
+        <div id="process-options" class="process-options"></div>
+        <div class="recipe-summary">
+          <div class="summary-heading"><h3>Resumo da receita</h3><span id="summary-kind">AGUARDANDO</span></div>
+          <div id="summary-lines" class="summary-lines"><p>Selecione ingredientes para preparar uma receita.</p></div>
+        </div>
+        <div class="craft-bottom">
+          <button id="craft-button" class="craft-button" disabled><span class="button-glyph"><img src="assets/icons/flask.svg" alt=""></span> <span id="craft-label">Iniciar produção</span></button>
+          <div id="progress-wrap" class="progress-wrap" hidden><div class="progress-label"><span id="progress-stage">Produzindo...</span><strong id="progress-time">0 s</strong></div><div class="progress-track"><div id="progress-fill"></div></div></div>
+          <p class="craft-disclaimer">Ingredientes consumidos ao finalizar a produção.</p>
+        </div>
+      </section>
+    </div>
+    <details id="debug" hidden><summary>Diagnóstico</summary><pre id="debug-data"></pre></details>
+    <footer class="footer"><span>✧&nbsp; A NATUREZA OFERECE. NÓS REVELAMOS. &nbsp;✧</span><span>BANCADA DE ALQUIMIA DA GUILDA</span></footer>
+  </main>
+</body>
+</html>

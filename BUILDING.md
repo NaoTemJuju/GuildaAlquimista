@@ -24,3 +24,9 @@ O alvo gera `GuildAlchemy.dll`. Copie-o para `Data/SKSE/Plugins/`. O projeto com
 
 Build validado nesta entrega: MSVC `14.44.35207`, VS Build Tools `17.14.41`, Windows SDK `10.0.26100`, runtime alvo `1.6.1170`.
 
+
+## Compilação da edição Meridian
+
+A edição Meridian foi compilada em Release com MSVC 14.44.35207, CommonLibSSE-NG alandtse/ng e o SDK MeridianUI API 1.0. Configure com `-DGUILDALCHEMY_BUILD_TESTS=OFF` e compile o alvo `GuildAlchemy`.
+
+O SDK está incluído em `third_party/MeridianUIAPI`; não é necessário vincular uma biblioteca Meridian adicional. A aquisição acontece pelo SKSELoader em tempo de execução. O carregamento dentro do Skyrim não foi verificado nesta entrega.

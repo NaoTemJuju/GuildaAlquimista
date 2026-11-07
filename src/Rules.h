@@ -9,6 +9,16 @@
 
 namespace GA::Rules {
 using ID = std::uint32_t;
+inline double BatchSeconds(int operations, int rank)
+{
+    if (operations < 1 || operations > 100) throw std::runtime_error("Quantidade de produção inválida.");
+    if (rank < 1 || rank > 5) throw std::runtime_error("Patente inválida.");
+    constexpr double step[] = {0, .25, .35, .50, .85, 1.0};
+    constexpr double floor[] = {0, 8.0, 7.5, 7.0, 5.0, 3.0};
+    double total{};
+    for (int i = 0; i < operations; ++i) total += (std::max)(floor[rank], 10.0 - step[rank] * i);
+    return total;
+}
 inline std::map<ID, int> Costs(const std::vector<ID>& ids, int operations, ID reagent, int maximum)
 {
     if (ids.size() < 2 || ids.size() > 3 || operations < 1 || operations > maximum)

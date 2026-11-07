@@ -1,11 +1,22 @@
 {
   "schemaVersion": 1,
   "debug": false,
+  "matchVanillaVisuals": true,
   "maxOperations": 100,
+  "timing": {
+    "stabilizationSeconds": 6,
+    "purificationSeconds": 8,
+    "concentrationSeconds": 12
+  },
   "purification": {
-    "adept": 0.9,
-    "specialist": 0.95,
+    "specialist": 0.9,
     "master": 1
+  },
+  "stabilization": {
+    "apprentice": { "wanted": 0.65, "unwanted": 0.5 },
+    "adept": { "wanted": 0.8, "unwanted": 0.4 },
+    "specialist": { "wanted": 0.85, "unwanted": 0.3 },
+    "master": { "wanted": 1, "unwanted": 0.2 }
   },
   "concentration": {
     "specialist": 1.1,
@@ -23,6 +34,139 @@
     ],
     "vokriiPlugin": "Vokrii - Minimalistic Perks of Skyrim.esp",
     "apothecaryPlugin": "Apothecary.esp",
+    "emptyBottle": "000800:Alchemy Requires Bottles Redux.esp",
+    "noviceEffects": [
+      "03EB15:Skyrim.esm",
+      "073F30:Skyrim.esm"
+    ],
+    "rankEffectLimits": {
+      "cumulative": true,
+      "novice": {
+        "effects": [
+          "03EB15:Skyrim.esm",
+          "073F30:Skyrim.esm"
+        ]
+      },
+      "apprentice": {
+        "effects": [
+          "03EB17:Skyrim.esm",
+          "03EB16:Skyrim.esm",
+          "0AE722:Skyrim.esm",
+          "03AC2D:Skyrim.esm",
+          "03EAEA:Skyrim.esm",
+          "03EAEB:Skyrim.esm",
+          "03EAEC:Skyrim.esm",
+          "090041:Skyrim.esm",
+          "03EAF3:Skyrim.esm",
+          "03EAF8:Skyrim.esm",
+          "03EAF9:Skyrim.esm",
+          "03EB01:Skyrim.esm"
+        ]
+      },
+      "adept": {
+        "effects": [
+          "03EB42:Skyrim.esm",
+          "03A2B6:Skyrim.esm",
+          "03A2C6:Skyrim.esm",
+          "073F2D:Skyrim.esm",
+          "073F2E:Skyrim.esm",
+          "073F2F:Skyrim.esm",
+          "090042:Skyrim.esm",
+          "03EB1F:Skyrim.esm",
+          "03EB1C:Skyrim.esm",
+          "03EB23:Skyrim.esm",
+          "03EB21:Skyrim.esm",
+          "03EB20:Skyrim.esm",
+          "03EB19:Skyrim.esm",
+          "03EB1A:Skyrim.esm",
+          "03EB1B:Skyrim.esm",
+          "03EB1D:Skyrim.esm",
+          "03EB22:Skyrim.esm",
+          "03EB29:Skyrim.esm",
+          "03EB06:Skyrim.esm",
+          "03EB07:Skyrim.esm",
+          "03EB08:Skyrim.esm"
+        ]
+      },
+      "specialist": {
+        "effects": [
+          "10AA4A:Skyrim.esm",
+          "10DE5F:Skyrim.esm",
+          "10DE5E:Skyrim.esm",
+          "03EB3D:Skyrim.esm",
+          "073F23:Skyrim.esm",
+          "073F20:Skyrim.esm",
+          "073F29:Skyrim.esm",
+          "073F2B:Skyrim.esm",
+          "073F25:Skyrim.esm",
+          "073F2C:Skyrim.esm",
+          "073F27:Skyrim.esm",
+          "073F26:Skyrim.esm",
+          "039E51:Skyrim.esm",
+          "03EB24:Skyrim.esm",
+          "03EB25:Skyrim.esm",
+          "03EB26:Skyrim.esm",
+          "03EB27:Skyrim.esm",
+          "03EB28:Skyrim.esm",
+          "03EB1E:Skyrim.esm",
+          "03EB18:Skyrim.esm",
+          "246C21:Apothecary.esp",
+          "1FFE18:Apothecary.esp",
+          "073F51:Skyrim.esm",
+          "0390E1:Dragonborn.esm",
+          "0F3879:Apothecary.esp"
+        ]
+      },
+      "master": {
+        "all": true
+      }
+    },
+    "apothecaryScaling": {
+      "perk": "0CB06C:Apothecary.esp",
+      "rules": [
+        {
+          "mode": "actorValue",
+          "value": 0.015,
+          "minimumAlchemy": 15,
+          "keywords": [
+            "065A31:Skyrim.esm",
+            "065A30:Skyrim.esm",
+            "065A33:Skyrim.esm",
+            "065A34:Skyrim.esm",
+            "065A32:Skyrim.esm",
+            "065A35:Skyrim.esm",
+            "20A01B:Apothecary.esp"
+          ]
+        },
+        {
+          "mode": "actorValue",
+          "value": 0.00667,
+          "minimumAlchemy": 15,
+          "keywords": [
+            "042503:Skyrim.esm",
+            "042508:Skyrim.esm",
+            "042504:Skyrim.esm"
+          ]
+        },
+        {
+          "mode": "multiply",
+          "value": 0.8,
+          "keywords": [
+            "23791D:Apothecary.esp"
+          ]
+        },
+        {
+          "mode": "actorValue",
+          "value": 0.0052,
+          "minimumAlchemy": 15,
+          "keywords": [
+            "10F9DD:Skyrim.esm",
+            "10F9DE:Skyrim.esm",
+            "10F9DC:Skyrim.esm"
+          ]
+        }
+      ]
+    },
     "vokriiKeywords": {
       "restore": [
         "042503:Skyrim.esm",

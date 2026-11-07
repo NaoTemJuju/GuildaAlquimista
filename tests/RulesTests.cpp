@@ -15,6 +15,11 @@ int main()
     assert(ScalingAxis(true, true, false, false) == Axis::None);
     assert(Scale(100.0, 1.15, false) == 115.0);
     assert(Scale(11.0, 0.9, true) == 9.0);
+    assert(BatchSeconds(1, 1) == 10.0);
+    assert(BatchSeconds(2, 1) == 19.75);
+    assert(BatchSeconds(3, 3) == 28.5);
+    assert(BatchSeconds(20, 1) == 169.0);
+    assert(BatchSeconds(20, 5) == 88.0);
 
     bool rejected = false;
     try { (void)Costs({10, 10}, 1, 0, 10); } catch (const std::runtime_error&) { rejected = true; }

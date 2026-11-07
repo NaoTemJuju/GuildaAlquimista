@@ -1,4 +1,7 @@
 #include "Runtime.h"
+#ifdef PlaySound
+#undef PlaySound
+#endif
 
 namespace GA {
 namespace {
@@ -19,6 +22,27 @@ bool Flag(const RE::EffectSetting* effect, RE::EffectSetting::EffectSettingData:
     return effect->data.flags.all(flag);
 }
 
+float ApothecaryScaling(RE::PlayerCharacter* player, const RE::EffectSetting* effect, float skill)
+{
+    if (!player || !effect || !apothecaryScalingPerk || !player->HasPerk(apothecaryScalingPerk)) return 1.0f;
+    float result=1.0f;
+    for (const auto& rule : apothecaryScalingRules) {
+        if (skill < rule.minimumAlchemy) continue;
+        const bool matches=std::ranges::any_of(rule.keywords,
+            [effect](const auto* keyword) { return keyword && effect->HasKeyword(keyword); });
+        if (!matches) continue;
+        const float factor=rule.mode == AlchemyScalingRule::Mode::ActorValue ?
+            1.0f + skill * rule.value : rule.value;
+        if (!std::isfinite(factor) || factor <= 0.0f)
+            throw std::runtime_error("O controlador do Apothecary produziu potência inválida.");
+        result*=factor;
+        logga::debug("Apothecary {:08X}: modo={} valor={} Alchemy={} fator={} acumulado={}",
+            effect->GetFormID(),rule.mode == AlchemyScalingRule::Mode::ActorValue ? "actorValue" : "multiply",
+            rule.value,skill,factor,result);
+    }
+    return result;
+}
+
 double EffectValue(const Virtue& effect)
 {
     const double magnitude = (std::max)(1.0, static_cast<double>(effect.magnitude));
@@ -34,6 +58,7 @@ Json EffectFingerprint(const Virtue& effect)
         {"duration", effect.duration},
         {"area", effect.area},
         {"removed", effect.removed},
+        {"stabilized", effect.stabilized},
         {"concentrated", effect.concentrated}
     };
 }
@@ -53,15 +78,65 @@ void FillEffects(RE::BSTArray<RE::Effect>& output, const Recipe& recipe)
     if (output.empty()) throw std::runtime_error("A purificação removeria todas as virtudes da preparação.");
 }
 
+std::string ProductName(const Recipe& recipe)
+{
+    const bool purified = std::ranges::any_of(recipe.effects, [](const auto& effect) { return effect.removed; });
+    const bool concentrated = std::ranges::any_of(recipe.effects, [](const auto& effect) { return effect.concentrated; });
+    const bool stabilized = std::ranges::any_of(recipe.effects, [](const auto& effect) { return effect.stabilized; });
+    const Virtue* primary{};
+    for (const auto& effect:recipe.effects)
+        if (!effect.removed && effect.base->IsHostile()==recipe.poison &&
+            (!primary || EffectValue(effect)>EffectValue(*primary))) primary=&effect;
+    if (!primary) throw std::runtime_error("Efeito principal do produto ausente.");
+    std::string label=primary->base->GetName();
+    if (label.empty()) label="Alquimia";
+    if (primary->base->GetFormID()==0x3EB15) label="Restauração de Vida";
+    if (primary->base->GetFormID()==0x73F30) label="Paralisia";
+    std::string name = std::string(recipe.poison ? "Veneno de " : "Poção de ")+label;
+    if (purified) name += recipe.poison ? " Purificado" : " Purificada";
+    if (stabilized) name += recipe.poison ? " Estabilizado" : " Estabilizada";
+    if (concentrated) name += recipe.poison ? " Concentrado" : " Concentrada";
+    return name;
+}
+
 void NameProduct(RE::AlchemyItem* product, const Recipe& recipe)
 {
     if (!product) throw std::runtime_error("O jogo não conseguiu criar o produto alquímico.");
-    const bool purified = std::ranges::any_of(recipe.effects, [](const auto& effect) { return effect.removed; });
-    const bool concentrated = std::ranges::any_of(recipe.effects, [](const auto& effect) { return effect.concentrated; });
-    std::string name = recipe.poison ? "Veneno da Guilda" : "Poção da Guilda";
-    if (purified) name += " Purificada";
-    if (concentrated) name += " Concentrada";
+    const auto name = ProductName(recipe);
     product->SetFullName(name.c_str());
+}
+
+void MatchVanillaVisuals(RE::AlchemyItem* product, const Recipe& recipe)
+{
+    if (!config.matchVanillaVisuals) return;
+    const Virtue* primary{};
+    for (const auto& effect : recipe.effects)
+        if (!effect.removed && effect.base->IsHostile() == recipe.poison &&
+            (!primary || EffectValue(effect) > EffectValue(*primary))) primary = &effect;
+    if (!primary) return;
+    auto* handler = RE::TESDataHandler::GetSingleton();
+    if (!handler) return;
+    RE::AlchemyItem* exemplar{};
+    double best = -1.0;
+    for (auto* candidate : handler->GetFormArray<RE::AlchemyItem>()) {
+        if (!candidate || candidate->GetFormID() > 0x00FFFFFF || candidate->IsPoison() != recipe.poison ||
+            !candidate->GetModel() || !*candidate->GetModel()) continue;
+        for (auto* effect : candidate->effects) {
+            if (!effect || effect->baseEffect != primary->base) continue;
+            const double score = candidate->effects.size() == 1 ? 2.0 : 1.0;
+            if (score > best) { exemplar = candidate; best = score; }
+            break;
+        }
+    }
+    if (!exemplar) {
+        logga::info("Visual vanilla: sem exemplar para efeito {:08X}", primary->base->GetFormID());
+        return;
+    }
+    static_cast<RE::TESModelTextureSwap*>(product)->CopyComponent(static_cast<RE::TESModelTextureSwap*>(exemplar));
+    static_cast<RE::TESIcon*>(product)->CopyComponent(static_cast<RE::TESIcon*>(exemplar));
+    static_cast<RE::BGSMessageIcon*>(product)->CopyComponent(static_cast<RE::BGSMessageIcon*>(exemplar));
+    logga::info("Visual vanilla: produto {:08X}, exemplar {:08X}, modelo={}",
+        product->GetFormID(), exemplar->GetFormID(), product->GetModel());
 }
 
 bool IsRegisteredProduct(RE::BGSCreatedObjectManager* manager, RE::AlchemyItem* product, bool poison,
@@ -77,39 +152,6 @@ bool IsRegisteredProduct(RE::BGSCreatedObjectManager* manager, RE::AlchemyItem* 
     return true;
 }
 
-// CommitProduct only proves the product survived the inventory add and the
-// ingredient consumption. It says nothing about who, if anyone, still holds a
-// reference to the dynamic form once Craft() returns. The 'created' smart
-// pointer passed in here is the manager's own initial reference; if nothing
-// else has acquired one of its own by this point, that pointer going out of
-// scope at the end of Craft() releases the last reference the manager knows
-// about, and the dynamic form can be torn down while the player's container
-// still points at it by FormID. Each product type keeps its own static
-// holding list, matching the smart pointer type actually returned for that
-// type by BGSCreatedObjectManager.
-template <typename Ptr>
-void PersistProductReference(RE::BGSCreatedObjectManager* manager, RE::AlchemyItem* product, bool poison,
-    const Ptr& created)
-{
-    std::uint32_t refs{};
-    if (!IsRegisteredProduct(manager, product, poison, refs)) {
-        logga::critical("Produto perdeu o registro do jogo após a transação: ptr={} FormID={:08X}",
-            fmt::ptr(product), product->GetFormID());
-        return;
-    }
-    static std::vector<Ptr> held;
-    static std::mutex heldMutex;
-    if (refs <= 1) {
-        std::lock_guard lock(heldMutex);
-        held.push_back(created);
-        logga::info("Referência persistente transferida ao inventário: ptr={} FormID={:08X} refs {}->{}",
-            fmt::ptr(product), product->GetFormID(), refs, refs + 1);
-    } else {
-        logga::info("Inventário adquiriu referência do produto: ptr={} FormID={:08X} refs={}",
-            fmt::ptr(product), product->GetFormID(), refs);
-    }
-}
-
 void RemoveAddedProduct(RE::PlayerCharacter* player, RE::AlchemyItem* product, std::int32_t count)
 {
     if (!player || !product || count <= 0) return;
@@ -122,6 +164,17 @@ void RemoveAddedProduct(RE::PlayerCharacter* player, RE::AlchemyItem* product, s
     }
 }
 
+void RestoreConsumedMaterials(RE::PlayerCharacter* player, const Recipe& recipe)
+{
+    for (const auto& [id,count]:recipe.costs)
+        if (auto* item=RE::TESForm::LookupByID<RE::IngredientItem>(id))
+            player->AddObjectToContainer(item,nullptr,count,nullptr);
+    if (emptyBottle && recipe.bottleCost>0)
+        player->AddObjectToContainer(emptyBottle,nullptr,recipe.bottleCost,nullptr);
+    logga::warn("Materiais restaurados após perda do produto: {} ingredientes, {} garrafas",
+        recipe.costs.size(),recipe.bottleCost);
+}
+
 void CommitProduct(RE::AlchemyItem* product, const Recipe& recipe, RE::PlayerCharacter* player,
     RE::BGSCreatedObjectManager* manager)
 {
@@ -130,12 +183,13 @@ void CommitProduct(RE::AlchemyItem* product, const Recipe& recipe, RE::PlayerCha
 
     std::uint32_t managerRefs{};
     const bool registered = IsRegisteredProduct(manager, product, recipe.poison, managerRefs);
-    logga::info("Produto criado: tipo={} ptr={} FormID={:08X} dinâmico={} registrado={} refs={}",
+    logga::info("Produto criado: tipo={} ptr={} FormID={:08X} dinâmico={} registrado={} refs={} IsPoison={}",
         recipe.poison ? "veneno" : "poção", fmt::ptr(product), product->GetFormID(),
-        product->IsDynamicForm(), registered, managerRefs);
+        product->IsDynamicForm(), registered, managerRefs, product->IsPoison());
     if (!registered) throw std::runtime_error("O produto criado não foi registrado pelo jogo.");
 
     NameProduct(product, recipe);
+    MatchVanillaVisuals(product, recipe);
     const auto outputBefore = player->GetItemCount(product);
     logga::info("Adicionando produto ao jogador: ptr={} FormID={:08X} quantidade={} antes={}",
         fmt::ptr(product), product->GetFormID(), recipe.output, outputBefore);
@@ -150,13 +204,13 @@ void CommitProduct(RE::AlchemyItem* product, const Recipe& recipe, RE::PlayerCha
     }
 
     struct CostSnapshot {
-        RE::IngredientItem* item{};
+        RE::TESBoundObject* item{};
         std::uint32_t id{};
         std::int32_t count{};
         std::int32_t before{};
     };
     std::vector<CostSnapshot> costs;
-    costs.reserve(recipe.costs.size());
+    costs.reserve(recipe.costs.size()+1);
     for (auto [id, count] : recipe.costs) {
         auto* item = RE::TESForm::LookupByID<RE::IngredientItem>(id);
         if (!item || count <= 0) {
@@ -170,6 +224,11 @@ void CommitProduct(RE::AlchemyItem* product, const Recipe& recipe, RE::PlayerCha
         }
         costs.push_back({item, id, count, before});
     }
+    if (!emptyBottle || recipe.bottleCost<=0 || player->GetItemCount(emptyBottle)<recipe.bottleCost) {
+        RemoveAddedProduct(player, product, recipe.output);
+        throw std::runtime_error("Garrafas vazias insuficientes; o produto foi revertido.");
+    }
+    costs.push_back({emptyBottle,emptyBottle->GetFormID(),recipe.bottleCost,player->GetItemCount(emptyBottle)});
 
     std::size_t completed{};
     for (; completed < costs.size(); ++completed) {
@@ -187,6 +246,24 @@ void CommitProduct(RE::AlchemyItem* product, const Recipe& recipe, RE::PlayerCha
         RemoveAddedProduct(player, product, recipe.output);
         throw std::runtime_error("Falha ao consumir os ingredientes; a operação foi revertida.");
     }
+
+    // AddPotion returns a CreatedObjPtr that owns one manager reference. The
+    // vanilla inventory path acquires its own reference while inserting a
+    // dynamic alchemy item, but a direct AddObjectToContainer call does not do
+    // that on every runtime. Perform this transfer only after the whole
+    // ingredient transaction succeeds, so a rollback cannot leak a manager
+    // reference. When the engine already acquired one, keep the count intact.
+    std::uint32_t refsAfterAdd{};
+    if (IsRegisteredProduct(manager, product, recipe.poison, refsAfterAdd)) {
+        if (refsAfterAdd == managerRefs) {
+            manager->IncrementRef(product);
+            logga::info("Referência persistente transferida ao inventário: ptr={} FormID={:08X} refs {}->{}",
+                fmt::ptr(product), product->GetFormID(), refsAfterAdd, refsAfterAdd + 1);
+        } else {
+            logga::debug("Inventário adquiriu referência do produto: ptr={} FormID={:08X} refs {}->{}",
+                fmt::ptr(product), product->GetFormID(), managerRefs, refsAfterAdd);
+        }
+    }
 }
 }
 
@@ -199,6 +276,7 @@ Request ParseRequest(const Json& data)
     for (const auto& id : ids) request.ingredients.push_back(ParseID(id));
     request.operations = data.at("operations").get<int>();
     if (auto it = data.find("removeEffect"); it != data.end()) request.remove = ParseID(*it);
+    if (auto it = data.find("stabilizeEffect"); it != data.end()) request.stabilize = ParseID(*it);
     if (auto it = data.find("concentrateEffect"); it != data.end()) request.target = ParseID(*it);
     if (auto it = data.find("reagent"); it != data.end()) request.reagent = ParseID(*it);
     return request;
@@ -210,16 +288,18 @@ Recipe Calculate(const Request& request)
     if (!player) throw std::runtime_error("Jogador indisponível.");
     const auto rank = Rank();
     if (rank < 1) throw std::runtime_error("A bancada exige a patente Novato.");
-    logga::debug("Receita: ingredientes={} operações={} remover={:08X} concentrar={:08X} reagente={:08X}",
-        Json(request.ingredients).dump(), request.operations, request.remove, request.target, request.reagent);
+    logga::debug("Receita: ingredientes={} operações={} remover={:08X} estabilizar={:08X} concentrar={:08X} reagente={:08X}",
+        Json(request.ingredients).dump(), request.operations, request.remove, request.stabilize, request.target, request.reagent);
+    if (request.remove && request.stabilize) throw std::runtime_error("Purificar e estabilizar são alternativas.");
 
     // Build unit costs first. A concentration operation consumes one extra copy
     // of the selected supporting ingredient per finished operation.
     auto unitCosts = Rules::Costs(request.ingredients, 1, request.reagent, 1);
     const auto inventory = Inventory();
-    const int maximum = Rules::Maximum(inventory, unitCosts, config.maxOperations);
+    const int bottles = emptyBottle ? player->GetItemCount(emptyBottle) : 0;
+    const int maximum = Rules::Maximum(inventory, unitCosts, (std::min)(config.maxOperations,bottles));
     if (request.operations < 1 || request.operations > maximum)
-        throw std::runtime_error("Ingredientes insuficientes para essa quantidade.");
+        throw std::runtime_error("Ingredientes ou garrafas insuficientes para essa quantidade.");
 
     std::vector<RE::IngredientItem*> ingredients;
     ingredients.reserve(request.ingredients.size());
@@ -254,6 +334,7 @@ Recipe Calculate(const Request& request)
     recipe.request = request;
     recipe.maximum = maximum;
     recipe.costs = Rules::Costs(request.ingredients, request.operations, request.reagent, maximum);
+    recipe.bottleCost=request.operations;
     const float skill = CurrentActorValue(player, RE::ActorValue::kAlchemy);
     const float fortify = CurrentActorValue(player, RE::ActorValue::kAlchemyModifier) +
                           CurrentActorValue(player, RE::ActorValue::kAlchemyPowerModifier);
@@ -281,12 +362,17 @@ Recipe Calculate(const Request& request)
         recipe.effects.push_back(std::move(virtue));
     }
     if (recipe.effects.empty()) throw std::runtime_error("Os ingredientes não compartilham nenhuma virtude.");
+    if (rank<5 && std::ranges::any_of(recipe.effects, [rank](const auto& effect) {
+            return !rankEffects[rank].contains(effect.base);
+        }))
+        throw std::runtime_error("Uma virtude da receita exige patente superior.");
 
     // Skyrim evaluates the potion/poison context from the strongest unscaled
     // result. Vokrii's Physician, Benefactor and Poisoner conditions use this
     // context plus the installed effect keywords read from the load order.
     const auto strongest = std::ranges::max_element(recipe.effects, {}, [](const auto& effect) { return EffectValue(effect); });
     const bool makingPoison = strongest != recipe.effects.end() && strongest->base->IsHostile();
+    recipe.poison=makingPoison;
     if (grants[0][0] && player->HasPerk(grants[0][0])) power *= 1.0f + skill * 0.01f;
     if (!std::isfinite(power) || power <= 0.0f || power > 100.0f)
         throw std::runtime_error("Os modificadores de alquimia produziram potência inválida.");
@@ -301,6 +387,7 @@ Recipe Calculate(const Request& request)
         if (physician) effectPower *= 1.25f;
         if (benefactor) effectPower *= 1.25f;
         if (poisoner) effectPower *= 1.25f;
+        effectPower *= ApothecaryScaling(player,virtue.base,skill);
         const auto flags = virtue.base->data.flags;
         if (flags.all(RE::EffectSetting::EffectSettingData::Flag::kPowerAffectsMagnitude) &&
             !flags.all(RE::EffectSetting::EffectSettingData::Flag::kNoMagnitude))
@@ -312,19 +399,30 @@ Recipe Calculate(const Request& request)
             virtue.base->GetName(), virtue.magnitude, virtue.duration, virtue.known, effectPower);
     }
 
-    if (request.remove) {
-        if (rank < 3) throw std::runtime_error("Purificação exige a patente Adepto.");
-        auto it = std::ranges::find(recipe.effects, request.remove, [](const auto& effect) { return effect.base->GetFormID(); });
-        if (it == recipe.effects.end() || !it->known) throw std::runtime_error("Só é possível remover uma virtude conhecida da preparação.");
-        if (request.target == request.remove) throw std::runtime_error("A mesma virtude não pode ser removida e concentrada.");
-        it->removed = true;
+    if (request.remove || request.stabilize) {
+        const bool purify=request.remove!=0;
+        if (purify && rank<4) throw std::runtime_error("Purificação exige a patente Especialista.");
+        if (!purify && rank<2) throw std::runtime_error("Estabilização exige a patente Aprendiz.");
+        const auto selected=purify ? request.remove : request.stabilize;
+        auto it = std::ranges::find(recipe.effects, selected, [](const auto& effect) { return effect.base->GetFormID(); });
+        if (it == recipe.effects.end() || !it->known || it->base->IsHostile()==makingPoison)
+            throw std::runtime_error("Escolha uma virtude secundária indesejada e conhecida.");
+        const auto desired=std::ranges::count_if(recipe.effects,[makingPoison](const auto& e){return e.base->IsHostile()==makingPoison;});
+        const auto undesired=recipe.effects.size()-desired;
+        if (purify && (desired!=1 || undesired!=1))
+            throw std::runtime_error("Purificar exige exatamente uma virtude desejada e uma indesejada.");
+        if (purify) it->removed=true;
         for (auto& effect : recipe.effects) {
             if (effect.removed) continue;
-            const auto factor = config.purification[rank];
+            const auto factor = purify ? config.purification[rank] :
+                (&effect==&*it ? config.stabilizationUnwanted[rank] :
+                    effect.base->IsHostile()==makingPoison ? config.stabilizationWanted[rank] : 1.0);
+            if (!purify && &effect==&*it) effect.stabilized=true;
             if (!Flag(effect.base, RE::EffectSetting::EffectSettingData::Flag::kNoMagnitude) && effect.magnitude > 0)
                 effect.magnitude = static_cast<float>(Rules::Scale(effect.magnitude, factor, false));
             else if (!Flag(effect.base, RE::EffectSetting::EffectSettingData::Flag::kNoDuration) && effect.duration > 0)
                 effect.duration = static_cast<std::uint32_t>(Rules::Scale(effect.duration, factor, true));
+            else if (factor!=1.0) throw std::runtime_error("Esta virtude não pode ser refinada com segurança.");
         }
     }
 
@@ -351,18 +449,15 @@ Recipe Calculate(const Request& request)
         if (effect.removed) continue;
         const auto value = EffectValue(effect);
         recipe.baseValue += static_cast<float>(value);
-        if (value > costliest) {
-            costliest = value;
-            recipe.poison = effect.base->IsHostile();
-        }
+        if (value > costliest) costliest = value;
     }
     if (costliest < 0.0) throw std::runtime_error("A preparação não pode terminar sem virtudes.");
     const bool doubled = doubleToil && player->HasPerk(doubleToil);
     recipe.output = request.operations * (doubled ? 2 : 1);
     recipe.fingerprint = {
         {"ingredients", request.ingredients}, {"operations", request.operations},
-        {"remove", request.remove}, {"target", request.target}, {"reagent", request.reagent},
-        {"rank", rank}, {"costs", recipe.costs}, {"output", recipe.output}, {"poison", recipe.poison}
+        {"remove", request.remove}, {"stabilize",request.stabilize}, {"target", request.target}, {"reagent", request.reagent},
+        {"rank", rank}, {"costs", recipe.costs}, {"bottleCost",recipe.bottleCost}, {"output", recipe.output}, {"poison", recipe.poison}
     };
     recipe.fingerprint["effects"] = Json::array();
     for (const auto& effect : recipe.effects) recipe.fingerprint["effects"].push_back(EffectFingerprint(effect));
@@ -376,8 +471,9 @@ Json PreviewJSON(const Recipe& recipe, const std::string& token)
     for (const auto& effect : recipe.effects) {
         Json value = {
             {"id", std::to_string(effect.base->GetFormID())}, {"known", effect.known},
-            {"removed", effect.removed}, {"concentrated", effect.concentrated},
+            {"removed", effect.removed}, {"stabilized",effect.stabilized}, {"concentrated", effect.concentrated},
             {"hostile", effect.base->IsHostile()}, {"canConcentrate", effect.known && !effect.removed && effect.axis != Rules::Axis::None},
+            {"canRefine",effect.known && effect.base->IsHostile()!=recipe.poison},
             {"reagents", Json::array()}
         };
         for (auto id : effect.reagents) value["reagents"].push_back(std::to_string(id));
@@ -386,7 +482,7 @@ Json PreviewJSON(const Recipe& recipe, const std::string& token)
             if (!Flag(effect.base, RE::EffectSetting::EffectSettingData::Flag::kNoMagnitude)) value["magnitude"] = effect.magnitude;
             if (!Flag(effect.base, RE::EffectSetting::EffectSettingData::Flag::kNoDuration)) value["duration"] = effect.duration;
         }
-        effects.push_back(std::move(value));
+        if (!effect.removed) effects.push_back(std::move(value));
     }
     Json costs = Json::array();
     for (auto [id, required] : recipe.costs) {
@@ -394,15 +490,28 @@ Json PreviewJSON(const Recipe& recipe, const std::string& token)
         costs.push_back({{"id", std::to_string(id)}, {"name", item ? item->GetName() : "?"},
             {"required", required}, {"available", inventory.contains(id) ? inventory.at(id) : 0}});
     }
+    costs.push_back({{"id",std::to_string(emptyBottle->GetFormID())},{"name",emptyBottle->GetName()},
+        {"required",recipe.bottleCost},{"available",RE::PlayerCharacter::GetSingleton()->GetItemCount(emptyBottle)}});
     const auto rank = Rank();
+    Json stages=Json::array({{{"name","Preparando"},{"seconds",Rules::BatchSeconds(recipe.request.operations,rank)}}});
+    if (recipe.request.stabilize) stages.push_back({{"name","Estabilizando"},{"seconds",config.stabilizationSeconds}});
+    if (recipe.request.remove) stages.push_back({{"name","Purificando"},{"seconds",config.purificationSeconds}});
+    if (recipe.request.target) stages.push_back({{"name","Concentrando"},{"seconds",config.concentrationSeconds}});
+    double craftSeconds{};
+    for (const auto& stage : stages) craftSeconds += stage.at("seconds").get<double>();
     return {
         {"token", token}, {"effects", effects}, {"costs", costs},
+        {"productType", recipe.poison ? "veneno" : "poção benéfica"},
+        {"productName", ProductName(recipe)},
         {"maxOperations", recipe.maximum}, {"outputCount", recipe.output},
+        {"craftSeconds", craftSeconds}, {"stages", stages},
         {"doubleToil", doubleToil && RE::PlayerCharacter::GetSingleton()->HasPerk(doubleToil)},
-        {"canPurify", rank >= 3 && std::ranges::any_of(recipe.effects, [](const auto& e) { return e.known; })},
+        {"canStabilize", rank >= 2 && std::ranges::any_of(recipe.effects,[&recipe](const auto& e){return e.known && e.base->IsHostile()!=recipe.poison;})},
+        {"canPurify", rank >= 4 && recipe.effects.size()==2 && std::ranges::count_if(recipe.effects,[&recipe](const auto& e){return e.base->IsHostile()==recipe.poison;})==1 && std::ranges::any_of(recipe.effects,[&recipe](const auto& e){return e.known && e.base->IsHostile()!=recipe.poison;})},
         {"canConcentrate", rank >= 4 && std::ranges::any_of(recipe.effects, [](const auto& e) { return e.known && e.axis != Rules::Axis::None; })},
         {"canFinalize", true},
-        {"purifyReason", rank >= 3 ? "Remove uma virtude conhecida; as restantes sofrem a perda da patente." : "Requer patente Adepto"},
+        {"stabilizeReason",rank>=2 ? "Reduz a virtude indesejada e parte da potência principal." : "Requer patente Aprendiz"},
+        {"purifyReason", rank >= 4 ? "Exige exatamente uma virtude desejada e uma indesejada." : "Requer patente Especialista"},
         {"concentrateReason", rank >= 4 ? "Consome uma cópia extra do reagente por operação; bônus limitado a 15%." : "Requer patente Especialista"}
     };
 }
@@ -418,20 +527,48 @@ void Craft(const Recipe& recipe)
 
     RE::BSTArray<RE::Effect> effects;
     FillEffects(effects, current);
+    RE::FormID createdId{};
     if (current.poison) {
-        RE::BSTSmartPointer<RE::AlchemyItem> created;
-        auto* product = manager->AddPoison(created, effects);
-        if (!product || created.get() != product) throw std::runtime_error("Falha ao criar o veneno.");
+        // CommonLib declares AddPoison's out parameter with the intrusive
+        // policy. On AE 1.6.1170 TESObject::IncRef returned zero, and that
+        // policy deleted the newly created form when the local went away.
+        // The engine-created form is registered with BGSCreatedObjectManager,
+        // so use the same manager-owned pointer policy as AddPotion. The
+        // runtime ABI takes a reference to one pointer-sized object; ignore
+        // its observed 0x1 return value.
+        RE::CreatedObjPtr<RE::AlchemyItem> created;
+        using AddPoisonFunction=void (*)(RE::BGSCreatedObjectManager*,
+            RE::CreatedObjPtr<RE::AlchemyItem>&,RE::BSTArray<RE::Effect>&);
+        static REL::Relocation<AddPoisonFunction> addPoison{RELOCATION_ID(35266,36168)};
+        addPoison(manager,created,effects);
+        auto* product = created.get();
+        logga::info("AddPoison manager-pointer: smart={}",fmt::ptr(product));
+        if (!product) throw std::runtime_error("Falha ao criar o veneno.");
+        createdId=product->GetFormID();
         CommitProduct(product, current, player, manager);
-        PersistProductReference(manager, product, true, created);
     } else {
         RE::CreatedObjPtr<RE::AlchemyItem> created;
         manager->AddPotion(created, effects);
         auto* product = created.get();
         if (!product) throw std::runtime_error("Falha ao criar a poção.");
+        createdId=product->GetFormID();
         CommitProduct(product, current, player, manager);
-        PersistProductReference(manager, product, false, created);
     }
+
+    // Both local owners have now released their temporary manager reference.
+    // A vanished dynamic form means GetItemCount inside CommitProduct was only
+    // transient. Restore the inputs and report failure rather than crafted.
+    auto* persisted=RE::TESForm::LookupByID<RE::AlchemyItem>(createdId);
+    const auto persistedCount=persisted ? player->GetItemCount(persisted) : 0;
+    logga::info("Produto após liberação local: FormID={:08X} ptr={} IsPoison={} inventário={}",
+        createdId,fmt::ptr(persisted),persisted ? persisted->IsPoison() : false,persistedCount);
+    if (!persisted || persistedCount<current.output) {
+        if (persisted && persistedCount>0) RemoveAddedProduct(player,persisted,persistedCount);
+        RestoreConsumedMaterials(player,current);
+        throw std::runtime_error("O produto desapareceu após a criação; ingredientes e garrafas foram restaurados.");
+    }
+
+    RE::PlaySound(current.poison ? "UIAlchemyCreatePoison" : "UIAlchemyCreatePotion");
 
     for (auto id : current.request.ingredients) {
         if (auto* ingredient = RE::TESForm::LookupByID<RE::IngredientItem>(id)) {

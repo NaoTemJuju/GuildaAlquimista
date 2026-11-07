@@ -3,12 +3,10 @@
 namespace {
 void OnSKSEMessage(SKSE::MessagingInterface::Message* message)
 {
+    if (!message) return;
+    GA::ProcessMeridianMessage(message);
     switch (message->type) {
-    case SKSE::MessagingInterface::kPostPostLoad:
-        GA::AcquirePrisma();
-        break;
     case SKSE::MessagingInterface::kDataLoaded:
-        GA::AcquirePrisma();
         if (!GA::ResolveForms()) {
             logga::critical("Inicialização abortada: formulários obrigatórios não foram resolvidos.");
             return;
@@ -44,6 +42,7 @@ SKSEPluginLoad(const SKSE::LoadInterface* skse)
         logga::critical("Não foi possível registrar o listener de mensagens do SKSE.");
         return false;
     }
+    GA::InitializeMeridian();
     logga::info("GuildAlchemy {}; runtime {}", GUILDALCHEMY_VERSION, skse->RuntimeVersion().string());
     return true;
 }
