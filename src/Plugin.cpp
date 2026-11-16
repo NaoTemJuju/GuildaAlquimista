@@ -23,7 +23,7 @@ SKSEPluginLoad(const SKSE::LoadInterface* skse)
     auto logger = std::make_shared<spdlog::logger>("GuildAlchemy", sink);
     spdlog::set_default_logger(logger);
     logger->set_level(spdlog::level::info);
-    logger->flush_on(spdlog::info);
+    logger->flush_on(spdlog::level::info);
     SKSE::Init(skse, false);
     if (!GA::LoadConfig()) return false;
     auto* messaging = SKSE::GetMessagingInterface();
