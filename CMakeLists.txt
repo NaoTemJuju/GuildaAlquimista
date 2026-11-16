@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.25)
-project(GuildAlchemy VERSION 0.1.7 LANGUAGES CXX)
+project(GuildAlchemy VERSION 0.2.0 LANGUAGES CXX)
 set(CMAKE_CXX_STANDARD 23)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_MSVC_RUNTIME_LIBRARY "MultiThreaded$<$<CONFIG:Debug>:Debug>DLL")
@@ -16,12 +16,12 @@ if(NOT COMMAND add_commonlibsse_plugin)
 endif()
 find_package(nlohmann_json CONFIG REQUIRED)
 add_commonlibsse_plugin(GuildAlchemy NAME "GuildAlchemy" AUTHOR "Guild Alchemy" SOURCES
+  src/BridgeProtocol.cpp
   src/Plugin.cpp
-  src/Recipe.cpp
   src/Runtime.cpp
   src/UI.cpp
 )
-target_include_directories(GuildAlchemy PRIVATE src third_party)
+target_include_directories(GuildAlchemy PRIVATE src)
 target_compile_definitions(GuildAlchemy PRIVATE GUILDALCHEMY_VERSION="${PROJECT_VERSION}")
 target_precompile_headers(GuildAlchemy PRIVATE src/PCH.h)
 target_compile_options(GuildAlchemy PRIVATE /Zc:preprocessor /utf-8 /W4)
@@ -29,11 +29,11 @@ target_link_libraries(GuildAlchemy PRIVATE nlohmann_json::nlohmann_json)
 install(TARGETS GuildAlchemy RUNTIME DESTINATION SKSE/Plugins LIBRARY DESTINATION SKSE/Plugins)
 install(DIRECTORY Data/ DESTINATION .)
 
-option(GUILDALCHEMY_BUILD_TESTS "Build deterministic rule tests" OFF)
+option(GUILDALCHEMY_BUILD_TESTS "Build bridge protocol tests" OFF)
 if(GUILDALCHEMY_BUILD_TESTS)
   enable_testing()
-  add_executable(GuildAlchemyRulesTests tests/RulesTests.cpp)
-  target_include_directories(GuildAlchemyRulesTests PRIVATE src)
-  target_compile_features(GuildAlchemyRulesTests PRIVATE cxx_std_23)
-  add_test(NAME GuildAlchemyRules COMMAND GuildAlchemyRulesTests)
+  add_executable(GuildAlchemyBridgeTests tests/BridgeProtocolTests.cpp src/BridgeProtocol.cpp)
+  target_include_directories(GuildAlchemyBridgeTests PRIVATE src)
+  target_compile_features(GuildAlchemyBridgeTests PRIVATE cxx_std_23)
+  add_test(NAME GuildAlchemyBridge COMMAND GuildAlchemyBridgeTests)
 endif()

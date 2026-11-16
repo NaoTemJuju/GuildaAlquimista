@@ -4,23 +4,12 @@ namespace {
 void OnSKSEMessage(SKSE::MessagingInterface::Message* message)
 {
     if (!message) return;
-    GA::ProcessMeridianMessage(message);
-    switch (message->type) {
-    case SKSE::MessagingInterface::kDataLoaded:
-        if (!GA::ResolveForms()) {
-            logga::critical("Inicialização abortada: formulários obrigatórios não foram resolvidos.");
-            return;
+    if (message->type == SKSE::MessagingInterface::kDataLoaded) {
+        // Sem autoridade local de receitas, patentes ou perks no cliente:
+        // apenas detecta a bancada fisica e envia ModCallbackEvent ao adapter do shell.
+        if (GA::ResolveForms()) {
+            GA::RegisterActivationSink();
         }
-        GA::InitializeUI();
-        GA::RegisterActivationSink();
-        break;
-    case SKSE::MessagingInterface::kPostLoadGame:
-    case SKSE::MessagingInterface::kNewGame:
-        GA::ResetSession();
-        GA::SyncGuildAlchemyRank();
-        break;
-    default:
-        break;
     }
 }
 }
@@ -34,15 +23,14 @@ SKSEPluginLoad(const SKSE::LoadInterface* skse)
     auto logger = std::make_shared<spdlog::logger>("GuildAlchemy", sink);
     spdlog::set_default_logger(logger);
     logger->set_level(spdlog::level::info);
-    logger->flush_on(spdlog::level::info);
+    logger->flush_on(spdlog::info);
     SKSE::Init(skse, false);
     if (!GA::LoadConfig()) return false;
     auto* messaging = SKSE::GetMessagingInterface();
     if (!messaging || !messaging->RegisterListener(OnSKSEMessage)) {
-        logga::critical("Não foi possível registrar o listener de mensagens do SKSE.");
+        logga::critical("Nao foi possivel registrar o listener de mensagens do SKSE.");
         return false;
     }
-    GA::InitializeMeridian();
-    logga::info("GuildAlchemy {}; runtime {}", GUILDALCHEMY_VERSION, skse->RuntimeVersion().string());
+    logga::info("GuildAlchemy {} (bridge minima); runtime {}", GUILDALCHEMY_VERSION, skse->RuntimeVersion().string());
     return true;
 }

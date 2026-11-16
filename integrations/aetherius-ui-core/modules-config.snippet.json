@@ -1,0 +1,18 @@
+{
+  "schemaVersion": 1,
+  "note": "Entrada para frontend/Data/MeridianUI/aetheriusui/modules-config.js quando testado isoladamente no AetheriusUI_Core (slot 7 - professions). Caso professions-module.js ja esteja instalado, inclua estes assets junto ao modulo professions e monte window.AetheriusAlchemyWorkshop na subrota /professions/alchemist-workshop.",
+  "modules": [
+    {
+      "id": "professions",
+      "slot": 7,
+      "route": "/professions",
+      "sdkMajor": 1,
+      "styles": [
+        "modules/professions/alchemy/alchemy-module.css"
+      ],
+      "scripts": [
+        "modules/professions/alchemy/alchemy-module.js"
+      ]
+    }
+  ]
+}
