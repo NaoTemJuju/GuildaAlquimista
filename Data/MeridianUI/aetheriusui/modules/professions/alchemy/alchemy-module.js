@@ -39,7 +39,7 @@
 
   function isStandbyError(message) {
     const text = String(message || '');
-    return /ACTION_UNAVAILABLE|indispon|Aguardando sessão|não registrado|prazo|timeout|standby|disabled|nao habilitado|não habilitado/i.test(text);
+    return /ACTION_UNAVAILABLE|indispon|n[aã]o est[aá] dispon[ií]vel|Aguardando sessão|não registrado|prazo|timeout|standby|disabled|nao habilitado|não habilitado/i.test(text);
   }
 
   function el(tag, className, text) {
@@ -59,13 +59,16 @@
       throw new Error('Contexto AetheriusUI inválido para o módulo de Alquimia.');
     }
 
-    const requestModuleId = options.requestModuleId || 'alchemy';
+    const runtimeConfig = window.AetheriusAlchemyWorkshopConfig || {};
+    const requestModuleId = options.requestModuleId || runtimeConfig.requestModuleId || 'alchemy';
+    const actionMap = options.actionMap || runtimeConfig.actionMap || null;
     const assetBase = options.assetBase || 'modules/professions/alchemy/assets';
     let disposed = false;
     let craftTimer = null;
 
     const state = {
       mode: 'loading', // loading | standby | ready | error
+      hasServerSnapshot: false,
       standbyReason: 'Conectando ao servidor autoritativo de Alquimia...',
       standbyCode: 'STANDBY',
       revision: 0,
@@ -130,11 +133,15 @@
 
     async function sendIntent(action, rawPayload = {}) {
       if (isAborted()) return null;
-      const payload = sanitizePayload(rawPayload);
-      if (estimateBytes({ moduleId: requestModuleId, action, payload }) > MAX_ENVELOPE_BYTES - 512) {
+      const mappedAction = (actionMap && actionMap[action]) || action;
+      const basePayload = actionMap
+        ? Object.assign({ profession: 'alchemist', alchemyAction: action }, rawPayload)
+        : rawPayload;
+      const payload = sanitizePayload(basePayload);
+      if (estimateBytes({ moduleId: requestModuleId, action: mappedAction, payload }) > MAX_ENVELOPE_BYTES - 512) {
         throw new Error('Solicitação excede o limite de tamanho permitido.');
       }
-      return context.request(requestModuleId, action, payload);
+      return context.request(requestModuleId, mappedAction, payload);
     }
 
     function applySnapshot(data) {
@@ -152,6 +159,7 @@
         return;
       }
       state.mode = 'ready';
+      state.hasServerSnapshot = true;
       if (typeof data.rank === 'string') state.rank = data.rank;
       if (data.vigor && typeof data.vigor === 'object') state.vigor = data.vigor;
       if (Number.isSafeInteger(data.bottles)) state.bottles = data.bottles;
@@ -166,7 +174,7 @@
     async function pullSnapshot() {
       if (state.pending || isAborted()) return;
       state.pending = true;
-      state.mode = state.ingredients.length ? state.mode : 'loading';
+      state.mode = state.hasServerSnapshot ? state.mode : 'loading';
       render();
       try {
         const res = await sendIntent('snapshot', {});
@@ -731,7 +739,7 @@
       statusBar.append(el('span', 'ga-status-dot'), el('span', '', state.statusText));
       root.append(statusBar);
 
-      if (state.mode === 'loading' || state.mode === 'standby' || (state.mode === 'error' && !state.ingredients.length)) {
+      if (state.mode === 'loading' || state.mode === 'standby' || (state.mode === 'error' && !state.hasServerSnapshot)) {
         root.append(renderStandbyView());
       } else {
         root.append(renderColumns());
