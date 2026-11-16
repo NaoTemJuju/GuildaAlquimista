@@ -1,6 +1,7 @@
 {
   "schemaVersion": 2,
   "debug": false,
+  "interceptAllAlchemyBenches": true,
   "workbench": "000800:GuildAlchemy.esp",
   "activationEvent": "AetheriusAlchemy.WorkbenchActivated"
 }

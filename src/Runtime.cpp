@@ -24,6 +24,7 @@ bool LoadConfig()
         }
         file >> config.document;
         config.debug = config.document.value("debug", false);
+        config.interceptAllAlchemyBenches = config.document.value("interceptAllAlchemyBenches", true);
         if (config.document.contains("workbench") && config.document["workbench"].is_string()) {
             config.workbenchKey = config.document["workbench"].get<std::string>();
         } else if (config.document.contains("forms") && config.document["forms"].is_object()) {
@@ -45,11 +46,14 @@ bool ResolveForms()
 {
     auto* base = ResolveFormKey(config.workbenchKey);
     workbench = base ? base->As<RE::TESObjectACTI>() : nullptr;
-    if (!workbench) {
-        logga::warn("Bancada ACTI '{}' nao encontrada no load order; ativacao fisica ficara inativa.", config.workbenchKey);
+    if (workbench) {
+        logga::info("Bancada ACTI opcional resolvida: {:08X} ({}).", workbench->GetFormID(), config.workbenchKey);
+    } else if (!config.interceptAllAlchemyBenches) {
+        logga::warn("Bancada ACTI '{}' nao encontrada e interceptAllAlchemyBenches=false; ativacao fisica ficara inativa.", config.workbenchKey);
         return false;
+    } else {
+        logga::info("Interceptacao global de bancadas de alquimia (FURN WBDT kAlchemy) habilitada sem necessidade de ESP.");
     }
-    logga::info("Ponte de bancada GuildAlchemy pronta para ACTI {:08X} ({}).", workbench->GetFormID(), config.workbenchKey);
     return true;
 }
 }

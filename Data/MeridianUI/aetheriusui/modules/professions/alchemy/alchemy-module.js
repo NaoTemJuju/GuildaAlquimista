@@ -813,7 +813,7 @@
       ],
       capabilities: ['professions.read', 'alchemy.prepare', 'alchemy.craft'],
       mount: function (container, context) {
-        return mountAlchemyWorkshop(container, context, { requestModuleId: 'alchemy' });
+        return mountAlchemyWorkshop(container, context);
       }
     });
   }

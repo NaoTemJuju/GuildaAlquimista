@@ -6,6 +6,7 @@ namespace GA {
 struct Config {
     Json document;
     bool debug{};
+    bool interceptAllAlchemyBenches{true};
     std::string workbenchKey{"000800:GuildAlchemy.esp"};
     std::string activationEvent{"AetheriusAlchemy.WorkbenchActivated"};
 };
