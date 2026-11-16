@@ -1,5 +1,6 @@
 #include "BridgeProtocol.h"
 
+#include <charconv>
 #include <cstdio>
 
 namespace GA::Bridge {
