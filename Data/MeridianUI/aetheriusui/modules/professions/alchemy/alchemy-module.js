@@ -62,6 +62,7 @@
     const runtimeConfig = window.AetheriusAlchemyWorkshopConfig || {};
     const requestModuleId = options.requestModuleId || runtimeConfig.requestModuleId || 'alchemy';
     const actionMap = options.actionMap || runtimeConfig.actionMap || null;
+    const testKitEnabled = Boolean(runtimeConfig.testKit);
     const assetBase = options.assetBase || 'modules/professions/alchemy/assets';
     let disposed = false;
     let craftTimer = null;
@@ -729,6 +730,34 @@
       refreshBtn.type = 'button';
       refreshBtn.disabled = state.pending || state.crafting;
       refreshBtn.addEventListener('click', () => void pullSnapshot());
+      if (testKitEnabled && state.mode === 'ready') {
+        const rankSelect = document.createElement('select');
+        rankSelect.className = 'ga-btn';
+        rankSelect.setAttribute('aria-label', 'Patente de teste');
+        for (const r of ['novice', 'apprentice', 'adept', 'specialist', 'master']) {
+          const opt = el('option', '', 'Teste: ' + (RANK_LABELS[r] || r));
+          opt.value = r;
+          rankSelect.append(opt);
+        }
+        rankSelect.value = RANK_LABELS[state.rank] ? state.rank : 'novice';
+        rankSelect.disabled = state.pending || state.crafting;
+        rankSelect.addEventListener('change', async event => {
+          const res = await sendIntent('setTestRank', { rank: event.target.value }).catch(e => ({ ok: false, message: e.message }));
+          if (res?.ok) applySnapshot(res);
+          else { state.statusText = res?.message || 'Falha ao trocar rank de teste.'; state.statusError = true; }
+          render();
+        });
+        const kitBtn = el('button', 'ga-btn', '+ Kit Teste');
+        kitBtn.type = 'button';
+        kitBtn.disabled = state.pending || state.crafting;
+        kitBtn.addEventListener('click', async () => {
+          const res = await sendIntent('giveTestKit', {}).catch(e => ({ ok: false, message: e.message }));
+          if (res?.ok) applySnapshot(res);
+          else { state.statusText = res?.message || 'Falha ao entregar kit de teste.'; state.statusError = true; }
+          render();
+        });
+        identity.append(rankSelect, kitBtn);
+      }
       identity.append(rankBox, refreshBtn);
       header.append(brand, identity);
       root.append(header);
