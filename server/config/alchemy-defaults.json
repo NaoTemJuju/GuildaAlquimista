@@ -15,6 +15,13 @@
   },
   "timing": {
     "batchBaseSeconds": 10.0,
+    "batchBaseByRank": {
+      "novice": 10.0,
+      "apprentice": 8.5,
+      "adept": 7.0,
+      "specialist": 5.5,
+      "master": 4.0
+    },
     "batchStepByRank": {
       "novice": 0.25,
       "apprentice": 0.35,
@@ -24,10 +31,10 @@
     },
     "batchFloorByRank": {
       "novice": 8.0,
-      "apprentice": 7.5,
-      "adept": 7.0,
-      "specialist": 5.0,
-      "master": 3.0
+      "apprentice": 6.5,
+      "adept": 5.0,
+      "specialist": 3.5,
+      "master": 2.5
     },
     "purificationSeconds": 8.0,
     "stabilizationSeconds": 6.0,
@@ -47,41 +54,54 @@
     "specialist": 1.1,
     "master": 1.15
   },
+  "portable": {
+    "maxOperations": 2,
+    "powerMultiplier": 0.8,
+    "timeMultiplier": 1.5
+  },
+  "crystallized": {
+    "durationMultiplier": 1.2
+  },
   "forms": {
     "guildPlugin": "GuildAlchemy.esp",
     "workbench": "GuildAlchemy.esp|000800",
     "vokriiPlugin": "Vokrii - Minimalistic Perks of Skyrim.esp",
     "apothecaryPlugin": "Apothecary.esp",
     "emptyBottle": "Alchemy Requires Bottles Redux.esp|000800",
+    "dregsItem": "GuildAlchemy.esp|00080D",
+    "crystallizedBottle": "GuildAlchemy.esp|00080E",
+    "portableKit": "GuildAlchemy.esp|00080F",
+    "whiteHoney": "GuildAlchemy.esp|000811",
     "forbiddenPerks": [
       "Skyrim.esm|05821D"
     ],
     "noviceEffects": [
       "Skyrim.esm|03EB15",
-      "Skyrim.esm|073F30"
+      "Skyrim.esm|03EB17",
+      "Skyrim.esm|03EB16",
+      "Skyrim.esm|03EAF9"
     ],
     "rankEffectLimits": {
       "cumulative": true,
       "novice": {
         "effects": [
           "Skyrim.esm|03EB15",
-          "Skyrim.esm|073F30"
+          "Skyrim.esm|03EB17",
+          "Skyrim.esm|03EB16",
+          "Skyrim.esm|03EAF9"
         ]
       },
       "apprentice": {
         "effects": [
-          "Skyrim.esm|03EB17",
-          "Skyrim.esm|03EB16",
           "Skyrim.esm|0AE722",
           "Skyrim.esm|03AC2D",
-          "Skyrim.esm|03EAEA",
           "Skyrim.esm|03EAEB",
           "Skyrim.esm|03EAEC",
           "Skyrim.esm|090041",
-          "Skyrim.esm|03EAF3",
           "Skyrim.esm|03EAF8",
-          "Skyrim.esm|03EAF9",
-          "Skyrim.esm|03EB01"
+          "Skyrim.esm|03EB01",
+          "Skyrim.esm|03EB19",
+          "Skyrim.esm|03EB23"
         ]
       },
       "adept": {
@@ -93,12 +113,13 @@
           "Skyrim.esm|073F2E",
           "Skyrim.esm|073F2F",
           "Skyrim.esm|090042",
+          "Skyrim.esm|03EAEA",
+          "Skyrim.esm|03EAF3",
+          "Skyrim.esm|073F26",
           "Skyrim.esm|03EB1F",
           "Skyrim.esm|03EB1C",
-          "Skyrim.esm|03EB23",
           "Skyrim.esm|03EB21",
           "Skyrim.esm|03EB20",
-          "Skyrim.esm|03EB19",
           "Skyrim.esm|03EB1A",
           "Skyrim.esm|03EB1B",
           "Skyrim.esm|03EB1D",
@@ -122,7 +143,6 @@
           "Skyrim.esm|073F25",
           "Skyrim.esm|073F2C",
           "Skyrim.esm|073F27",
-          "Skyrim.esm|073F26",
           "Skyrim.esm|039E51",
           "Skyrim.esm|03EB24",
           "Skyrim.esm|03EB25",
@@ -236,5 +256,85 @@
         ]
       }
     ]
+  },
+  "research": {
+      "durationSeconds": 30,
+      "officialDurationSeconds": 120,
+      "basicSolvent": "GuildAlchemy.esp|000807",
+      "advancedSolvent": "GuildAlchemy.esp|000808",
+      "manuscriptBook": "GuildAlchemy.esp|000809",
+      "researcherPerk": "GuildAlchemy.esp|00080C",
+      "paperItem": "Skyrim.esm|033761",
+      "paperCost": 5,
+      "charcoalItem": "Skyrim.esm|033760",
+      "charcoalCost": 1,
+      "stations": [
+        {
+          "id": "ghostshelf-basement",
+          "label": "Mesa de Pesquisa Alquímica",
+          "cellOrWorldDesc": "874ae1:EnemyModsGhostshelfKeep.esp",
+          "pos": [-714.54, 101.30, -333.44],
+          "radius": 220
+        }
+      ],
+      "solvents": {
+        "basic": {
+          "id": "basic_solvent",
+          "name": "Solvente Básico",
+          "output": "GuildAlchemy.esp|000807",
+          "requiresResearcher": false,
+          "inputs": [
+            { "key": "Alchemy Requires Bottles Redux.esp|000800", "name": "Garrafa Vazia", "count": 1 },
+            { "key": "Skyrim.esm|045C28", "name": "Lavanda", "count": 5 },
+            { "key": "Skyrim.esm|01B3BD", "name": "Bagas de Neve", "count": 5 },
+            { "key": "Skyrim.esm|034CDF", "name": "Porção de Sal", "count": 1 }
+          ]
+        },
+        "advanced": {
+          "id": "advanced_solvent",
+          "name": "Solvente Avançado",
+          "output": "GuildAlchemy.esp|000808",
+          "requiresResearcher": true,
+          "inputs": [
+            { "key": "Alchemy Requires Bottles Redux.esp|000800", "name": "Garrafa Vazia", "count": 1 },
+            { "key": "Skyrim.esm|0889A2", "name": "Língua de Dragão", "count": 2 },
+            { "key": "Skyrim.esm|06ABCB", "name": "Raiz de Canis", "count": 2 },
+            { "key": "Skyrim.esm|034D22", "name": "Alho", "count": 1 },
+            { "key": "Skyrim.esm|059B86", "name": "Raiz de Nirn", "count": 3 },
+            { "key": "Skyrim.esm|034CDF", "name": "Porção de Sal", "count": 1 }
+          ]
+        }
+      },
+      "auxiliaryRecipes": {
+        "recycleBorra": {
+          "id": "recycle_borra",
+          "name": "Limpar Garrafa com Sal",
+          "description": "Remove o resíduo impregnado dos frascos usando sal e recupera uma garrafa limpa.",
+          "output": "Alchemy Requires Bottles Redux.esp|000800",
+          "outputName": "Garrafa Vazia",
+          "outputCount": 1,
+          "minRank": "novice",
+          "seconds": 4.0,
+          "inputs": [
+            { "key": "GuildAlchemy.esp|00080D", "name": "Borra Alquímica", "count": 5 },
+            { "key": "Skyrim.esm|034CDF", "name": "Porção de Sal", "count": 1 }
+          ]
+        },
+        "crystallizedFlask": {
+          "id": "crystallized_flask",
+          "name": "Frasco Cristalizado",
+          "description": "Prepara um frasco especial reforçado (+20% de duração em poções e venenos).",
+          "output": "GuildAlchemy.esp|00080E",
+          "outputName": "Frasco Cristalizado",
+          "outputCount": 1,
+          "minRank": "novice",
+          "seconds": 6.0,
+          "inputs": [
+            { "key": "Alchemy Requires Bottles Redux.esp|000800", "name": "Garrafa Vazia", "count": 1 },
+            { "key": "Skyrim.esm|05ACE3", "name": "Lingote de Prata", "count": 1 },
+            { "key": "Skyrim.esm|03AD73", "name": "Pó Brilhante", "count": 1 }
+          ]
+        }
+      }
+    }
   }
-}

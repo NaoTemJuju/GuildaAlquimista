@@ -10,6 +10,7 @@ void OnSKSEMessage(SKSE::MessagingInterface::Message* message)
         if (GA::ResolveForms()) {
             GA::RegisterActivationSink();
         }
+        GA::RegisterCraftedPotionSink();
     }
 }
 }

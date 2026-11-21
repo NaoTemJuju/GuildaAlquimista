@@ -1,8 +1,22 @@
 #include "Runtime.h"
 
+#include <chrono>
+
 namespace GA {
 namespace {
 bool sinkRegistered{};
+bool menuSinkRegistered{};
+std::chrono::steady_clock::time_point suppressCraftingUntil{};
+
+void CloseVanillaCraftingMenu()
+{
+    auto* ui = RE::UI::GetSingleton();
+    if (!ui || !ui->IsMenuOpen(RE::CraftingMenu::MENU_NAME)) return;
+    if (auto* queue = RE::UIMessageQueue::GetSingleton()) {
+        queue->AddMessage(RE::CraftingMenu::MENU_NAME, RE::UI_MESSAGE_TYPE::kHide, nullptr);
+    }
+    logga::debug("Crafting Menu vanilla fechado pela ponte GuildAlchemy.");
+}
 
 bool IsAlchemyWorkbench(RE::TESBoundObject* base)
 {
@@ -44,8 +58,29 @@ void NotifyClientAdapter(RE::TESObjectREFR* target)
     modEvent.sender = target;
     source->SendEvent(&modEvent);
 
+    suppressCraftingUntil = std::chrono::steady_clock::now() + std::chrono::seconds(5);
+    CloseVanillaCraftingMenu();
+
     logga::debug("ModCallbackEvent '{}' enviado: {}", config.activationEvent, payload);
 }
+
+class CraftingMenuGuard final : public RE::BSTEventSink<RE::MenuOpenCloseEvent> {
+public:
+    RE::BSEventNotifyControl ProcessEvent(const RE::MenuOpenCloseEvent* event,
+        RE::BSTEventSource<RE::MenuOpenCloseEvent>*) override
+    {
+        if (event && event->opening && event->menuName == RE::CraftingMenu::MENU_NAME &&
+            std::chrono::steady_clock::now() <= suppressCraftingUntil) {
+            if (auto* queue = RE::UIMessageQueue::GetSingleton()) {
+                queue->AddMessage(RE::CraftingMenu::MENU_NAME, RE::UI_MESSAGE_TYPE::kHide, nullptr);
+            }
+            logga::debug("Crafting Menu vanilla interceptado na abertura e ocultado.");
+        }
+        return RE::BSEventNotifyControl::kContinue;
+    }
+};
+
+CraftingMenuGuard craftingMenuGuard;
 
 class ActivationSink final : public RE::BSTEventSink<RE::TESActivateEvent> {
 public:
@@ -66,12 +101,19 @@ ActivationSink activationSink;
 
 void RegisterActivationSink()
 {
-    if (sinkRegistered) return;
-    if (!workbench && !config.interceptAllAlchemyBenches) return;
-    if (auto* source = RE::ScriptEventSourceHolder::GetSingleton()) {
-        source->AddEventSink<RE::TESActivateEvent>(std::addressof(activationSink));
-        sinkRegistered = true;
-        logga::info("Listener de ativacao de bancadas de alquimia registrado (somente sinalizacao ao shell AetheriusUI).");
+    if (!sinkRegistered) {
+        if (auto* source = RE::ScriptEventSourceHolder::GetSingleton()) {
+            source->AddEventSink<RE::TESActivateEvent>(std::addressof(activationSink));
+            sinkRegistered = true;
+            logga::info("Listener de ativacao de bancadas de alquimia registrado (somente sinalizacao ao shell AetheriusUI).");
+        }
+    }
+    if (!menuSinkRegistered) {
+        if (auto* ui = RE::UI::GetSingleton()) {
+            ui->AddEventSink<RE::MenuOpenCloseEvent>(std::addressof(craftingMenuGuard));
+            menuSinkRegistered = true;
+            logga::info("Filtro de Crafting Menu vanilla registrado para bancadas de alquimia.");
+        }
     }
 }
 }

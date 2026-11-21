@@ -75,9 +75,10 @@ function registerAlchemyUiHandlers(router, service, { moduleId = 'alchemy' } = {
     }
   };
 
-  router.register(moduleId, 'snapshot', wrap((ctx) => service.getSnapshot(ctx)));
+  router.register(moduleId, 'snapshot', wrap((ctx, payload) => service.getSnapshot(ctx, payload)));
   router.register(moduleId, 'prepare', wrap((ctx, payload) => service.prepare(ctx, payload)));
   router.register(moduleId, 'craft', wrap((ctx, payload) => service.craft(ctx, payload)));
+  router.register(moduleId, 'craftAux', wrap((ctx, payload) => service.craftAuxiliary(ctx, payload)));
   router.register(moduleId, 'cancel', wrap((ctx, payload) => service.cancel(ctx, payload)));
   router.register(moduleId, 'close', wrap((ctx, payload) => service.cancel(ctx, payload)));
 

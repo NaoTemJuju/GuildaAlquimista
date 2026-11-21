@@ -17,4 +17,5 @@ extern RE::TESObjectACTI* workbench;
 bool LoadConfig();
 bool ResolveForms();
 void RegisterActivationSink();
+void RegisterCraftedPotionSink();
 }

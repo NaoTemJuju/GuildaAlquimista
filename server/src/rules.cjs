@@ -44,12 +44,14 @@ function batchSeconds(operations, rank, timingConfig = null) {
   if (idx < 1 || idx > 5) fail('INVALID_RANK', 'Patente inválida.');
 
   const key = RANK_ORDER[idx];
-  const base = timingConfig?.batchBaseSeconds ?? 10.0;
+  const baseMap = timingConfig?.batchBaseByRank;
+  const rawBase = baseMap && typeof baseMap === 'object' ? Number(baseMap[key]) : NaN;
+  const base = Number.isFinite(rawBase) && rawBase > 0 ? rawBase : (timingConfig?.batchBaseSeconds ?? 10.0);
   const stepMap = timingConfig?.batchStepByRank ?? {
     novice: 0.25, apprentice: 0.35, adept: 0.50, specialist: 0.85, master: 1.0
   };
   const floorMap = timingConfig?.batchFloorByRank ?? {
-    novice: 8.0, apprentice: 7.5, adept: 7.0, specialist: 5.0, master: 3.0
+    novice: 8.0, apprentice: 6.5, adept: 5.0, specialist: 3.5, master: 2.5
   };
   const step = Number(stepMap[key]);
   const floor = Number(floorMap[key]);

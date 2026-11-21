@@ -15,3 +15,9 @@ Regras (completas em REGRAS.md do acervo, seção 10):
 6. Se não conseguir ler ou enviar ao acervo, AVISE O DEV imediatamente e entregue os .md prontos.
 7. Nunca envie segredos, IPs de produção ou dados de jogadores.
 <!-- ACERVO-AETHERIUS:FIM -->
+
+## Regra permanente de publicação neste repositório (`NaoTemJuju/GuildaAlquimista`)
+Sempre que o usuário solicitar subir/enviar alterações para o Git (`https://github.com/NaoTemJuju/GuildaAlquimista`), antes do commit e `git push`:
+1. Atualizar a documentação atual (`README.md` e arquivos técnicos afetados) para refletir com exatidão tudo o que está implementado.
+2. Atualizar obrigatoriamente a seção/documento **"Pontos que devem ser mudados até o final da versão"** ([`PONTOS_PENDENTES_VERSAO_FINAL.md`](PONTOS_PENDENTES_VERSAO_FINAL.md) e resumo no [`README.md`](README.md)), listando todas as pendências técnicas, integrações com os Cores e ajustes finais pendentes antes da release.
+3. Garantir que artefatos locais (`build_local/`), logs, dados de jogadores e segredos não sejam commitados.
